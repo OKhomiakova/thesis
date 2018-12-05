@@ -128,7 +128,7 @@
 </key>
 <comment>Passport data of all patients</comment>
 </table>
-<table x="877" y="412" name="tblAnalysis">
+<table x="938" y="325" name="tblAnalysis">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -200,5 +200,17 @@
 <part>id</part>
 </key>
 <comment>Prescribed therapy</comment>
+</table>
+<table x="176" y="639" name="tblDoctor">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="fullName" null="1" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<comment>List of all doctors.</comment>
 </table>
 </sql>
