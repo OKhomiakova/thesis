@@ -8,7 +8,7 @@ $db  = "dbHospital";
 $link = mysqli_connect($host, $user, "");
 
 if (mysqli_connect_errno()) {
-    printf("Не удалось подключиться: %s\n", mysqli_connect_error());
+    printf("Failed to connect: %s\n", mysqli_connect_error());
     exit();
 }
 
@@ -26,6 +26,7 @@ else {
     printf("<p>Error occured: %s </p>", mysqli_error($link));
 }
 
+mysqli_query($link, "SET NAMES utf8");
 
 mysqli_close($link);
 
@@ -41,39 +42,28 @@ else {
 
 $createTblPatient = "CREATE TABLE tblPatient (
     intPatientId integer not null primary key,
-    datInput date,
-    intDiseaseHistoryNumber integer,
-    txtPatientFullName varchar(100),
-    txtPatientGender varchar(10),
-    txtSGHSGroup varchar(100),
-    intPatientAge integer(3), 
-    datBirthday date,
-    txtMutation varchar(4),
-    txtIBS varchar(4),
-    intOIM integer(128),
-    txtAG varchar(4),
-    txtSmoking varchar(4),
-    txtNutritionSatus varchar(100),
-    txtOperation varchar(128),
-    txtTherapyOK varchar(4),
-    intHeight integer(3),
-    decWeight decimal(3),
-    decIMT decimal(10),
-    decOHS decimal(3),
-    decLPNP decimal(3),
-    decLPVP decimal(3),
-    decTG decimal(3),
-    decLPa decimal(4),
-    decAST decimal(5),
-    decALT decimal(5),
-    decBilirubin decimal(3),
-    decGlucose decimal(3)
+    datInput date NOT NULL,
+    intDiseaseHistoryNumber integer NOT NULL,
+    txtPatientFullName varchar(100) NOT NULL,
+    txtPatientGender varchar(10) NOT NULL,
+    intPatientAge integer(3) NOT NULL, 
+    datBirthday date NOT NULL,
+    txtMutation varchar(4) NOT NULL,
+    txtIBS varchar(4) NOT NULL,
+    intOIM integer(10)NOT NULL,
+    txtAG varchar(4) NOT NULL,
+    txtSmoking varchar(3) NOT NULL,
+    txtNutritionSatus varchar(20) NOT NULL,
+    txtOperation varchar(10) NOT NULL,
+    txtTherapyOK varchar(4) NOT NULL,
+    intHeight integer(3) NOT NULL
     )";	
 
 $createTblAnalysis = "CREATE TABLE tblAnalysis (
     intAnalysisId integer not null primary key,
     intPatientId integer not null,
     datAnalysis date,
+    decWeight decimal(3),
     decIMT decimal(10),
     decOHS decimal(3),
     decLPNP decimal(3),
@@ -95,13 +85,15 @@ $createTblTherapy = "CREATE TABLE tblTherapy (
     binTolerance binary
     )";		
     
-$createTblDoctor = "CREATE TABLE tblDoctor (
-    intDoctorId integer not null primary key,
-    txtDoctorFullName varchar(100),
-    datStartWork date,
-    txtSpeciality varchar(100)
+$createTblDrug = "CREATE TABLE tblDrug (
+    intDrugId integer not null primary key,
+    txtDrugName varchar(100)
     )";	
 
+$createTblSGHS = "CREATE TABLE tblSGHS (
+    intGroupId integer not null primary key,
+    txtGroupName varchar(15)
+    )";	
 
 
 /* Создание таблицы не возвращает результирующего набора */
@@ -119,8 +111,6 @@ else {
 }
 
 
-
-
 if (mysqli_query($link, $createTblTherapy) === TRUE) {
     printf("<p>Table tblTherapy has been created successfully.</p>");
 }
@@ -133,9 +123,6 @@ if (mysqli_query($link, "ALTER TABLE tblTherapy CHARACTER SET utf8 COLLATE utf8_
 else {
     printf("<p>Error occured: %s </p>", mysqli_error($link));
 }
-
-
-
 
 
 if (mysqli_query($link, $createTblAnalysis) === TRUE) {
@@ -152,16 +139,28 @@ else {
 }
 
 
-
-
-if (mysqli_query($link, $createTblDoctor) === TRUE) {
-    printf("<p>Table tblDoctor has been created successfully.</p>");
+if (mysqli_query($link, $createTblDrug) === TRUE) {
+    printf("<p>Table tblDrug has been created successfully.</p>");
 }
 else {
     printf("<p>Error occured: %s </p>", mysqli_error($link));
 }
-if (mysqli_query($link, "ALTER TABLE tblDoctor CHARACTER SET utf8 COLLATE utf8_general_ci;") === TRUE) {
-    printf("<p>Table tblDoctor set to utf8_general_ci.</p>");
+if (mysqli_query($link, "ALTER TABLE tblDrug CHARACTER SET utf8 COLLATE utf8_general_ci;") === TRUE) {
+    printf("<p>Table tblDrug set to utf8_general_ci.</p>");
+}
+else {
+    printf("<p>Error occured: %s </p>", mysqli_error($link));
+}
+
+
+if (mysqli_query($link, $createTblSGHS) === TRUE) {
+    printf("<p>Table tblSGHS has been created successfully.</p>");
+}
+else {
+    printf("<p>Error occured: %s </p>", mysqli_error($link));
+}
+if (mysqli_query($link, "ALTER TABLE tblSGHS CHARACTER SET utf8 COLLATE utf8_general_ci;") === TRUE) {
+    printf("<p>Table tblSGHS set to utf8_general_ci.</p>");
 }
 else {
     printf("<p>Error occured: %s </p>", mysqli_error($link));
