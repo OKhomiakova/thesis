@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#search_text').keyup(function(){
         var txt = $(this).val();
-        if(txt != '') {
+        if(txt == '') {
 
         } else {
             $('#result').html('');
