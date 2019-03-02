@@ -17,16 +17,8 @@
       </div>
 </div>
 <div id="result"></div>
-<!-- <div class="wrap">
-   <div class="search">
-      <input type="text" class="searchTerm" placeholder="Найти пациента...">
-      <button type="submit" class="searchButton">
-        <i class="fas fa-search"></i>
-     </button>
-   </div>
-</div> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="search.js"></script>
 <?php include 'footer.php';?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src=""></script>
 </body>
 </html>

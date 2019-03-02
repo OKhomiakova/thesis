@@ -7,7 +7,7 @@
  $link = mysqli_connect($host, $user, $password, $db);
 
  $output = '';
- $sql = "SELECT * FROM tblpatient WHERE txtPatientFullName LIKE '%".$_POST["search"]."%'";
+ $sql = "SELECT * FROM tblPatient WHERE txtPatientFullName LIKE '%".$_POST["search"]."%'";
  $result = mysqli_query($link, $sql);
  if(mysqli_num_rows($result)>0){
     $output .= '<h4 aligh="center"> Результаты поиска:</h4>';
