@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('#search_text').keyup(function(){
         var txt = $(this).val();
         if(txt == '') {
-
+            $('#result').html(txt);
         } else {
             $('#result').html('');
             $.ajax({

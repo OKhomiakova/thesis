@@ -5,9 +5,12 @@
  $db  = "dbHospital";
  
  $link = mysqli_connect($host, $user, $password, $db);
+mysqli_query($link, "set names cp1251");
+mysqli_set_charset($link, "utf8");
 
  $output = '';
  $sql = "SELECT * FROM tblPatient WHERE txtPatientFullName LIKE '%".$_POST["search"]."%'";
+
  $result = mysqli_query($link, $sql);
  if(mysqli_num_rows($result)>0){
     $output .= '<h4 aligh="center"> Результаты поиска:</h4>';
@@ -24,7 +27,7 @@
         $output .= '
             <tr>
                 <td>'.$row["intDiseaseHistoryNumber"].'</td>
-                <td>'.$row["txtPatientFullName"].'</td>
+                <td><a href="patient.php?id="'.$row["intPatientId"].'>'.$row["txtPatientFullName"].'</a></td>
                 <td>'.$row["txtPatientGender"].'</td>
                 <td>'.$row["txtSGHSGroup"].'</td>
                 <td>'.$row["datBirthday"].'</td>

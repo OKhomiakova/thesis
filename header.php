@@ -12,7 +12,7 @@
                     <a href="search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
                 </div>
             </li>
-            <li><a href="results.html">Результаты исследований и назначение терапии</a></li>
+            <li><a href="add_result.php">Результаты исследований и назначение терапии</a></li>
             <li><a href="report.html">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
