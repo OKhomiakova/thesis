@@ -35,9 +35,9 @@
             <legend>Паспорт пациента</legend>
                 <div class="passport">
                     <label for="dateInput">Дата ввода данных</label>
-                    <input type="date" id="dateInput" name="dateInput">
+                    <input type="date" id="dateInput" name="dateInput" required>
                     <label for="patientCard">Номер ИБ</label>
-                    <input type="number" id="patientCard" name="card" required>
+                    <input type="number" id="patientCard" name="card" min="0"  required>
                     <label for="patientName">ФИО Пациента</label>
                     <input type="text" id="patientName" name="patientName" required>
                     <label for="patientGender">Пол</label>
@@ -52,7 +52,7 @@
                         <option value="Вероятная">Вероятная</option>
                     </select>
                     <label for="patientAge">Возраст</label>
-                    <input type="number" id="patientAge" name="age" required>
+                    <input type="number" id="patientAge" name="age" min="0" required>
                     <label for="patientDateOfBirth">Дата рождения</label>
                     <input type="date" id="patientDateOfBirth" name="bithDay" required>
                     <label for="mutation">Мутации</label>
@@ -66,7 +66,7 @@
                         <p><input type="radio" id="IBS" name="ibs" value="Да" checked>Нет</p>
                     </div>
                         <label for="OIM">ОИМ в анамнезе</label>
-                    <input type="number" id="OIM" name="oim" required>
+                    <input type="number" id="OIM" name="oim" min="0" required>
                     <label for="AG">АГ</label>
                     <div class="align">
                         <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
@@ -85,7 +85,7 @@
                             <option value="Выраженное ожирение">Выраженное ожирение</option>
                         </select>
                     <label for="operationNum">Операция в анамнезе</label>
-                    <input type="number" id="operationNum" name="operationNum">
+                    <input type="number" id="operationNum" name="operationNum" min="0">
                     <label for="therapyOk">Привержен терапии</label>
                     <div class="align">
                         <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>

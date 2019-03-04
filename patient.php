@@ -30,7 +30,7 @@
                 </li>
         </ul>  
     </nav>
-    <!-- <?php 
+    <?php 
         $id = $_GET["id"];
         
         $host = "localhost";
@@ -58,17 +58,17 @@
                                     <th>Дата рождения</th>
                                 </tr>';
             while($row = mysqli_fetch_array($result)){
-                echo $row["intPatientId"] . " " . $row["txtPatientFullName"] . PHP_EOL;
                 $output .= '
                     <tr>
                         <td>'.$row["intDiseaseHistoryNumber"].'</td>
-                        <td><a href="patient.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
+                        <td><a href="add_result.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
                         <td>'.$row["txtPatientGender"].'</td>
                         <td>'.$row["txtSGHSGroup"].'</td>
                         <td>'.$row["datBirthday"].'</td>
                     </tr>';
             }
-        echo $output;
-    ?> -->
+        echo $output; 
+    }
+    ?>
 </body>
 </html>

@@ -28,7 +28,7 @@ mysqli_set_charset($link, "utf8");
         $output .= '
             <tr>
                 <td>'.$row["intDiseaseHistoryNumber"].'</td>
-                <td><a href="patient.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
+                <td><a href="add_result.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
                 <td>'.$row["txtPatientGender"].'</td>
                 <td>'.$row["txtSGHSGroup"].'</td>
                 <td>'.$row["datBirthday"].'</td>
