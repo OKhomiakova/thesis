@@ -7,7 +7,7 @@
  $link = mysqli_connect($host, $user, $password, $db);
 mysqli_query($link, "set names cp1251");
 mysqli_set_charset($link, "utf8");
-
+echo '<h2>Поиск пациента в базе:</h2>';
  $output = '';
  $sql = "SELECT * FROM tblPatient WHERE txtPatientFullName LIKE '%".$_POST["search"]."%'";
 
@@ -28,7 +28,7 @@ mysqli_set_charset($link, "utf8");
         $output .= '
             <tr>
                 <td>'.$row["intDiseaseHistoryNumber"].'</td>
-                <td><a href="patient.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
+                <td><a href="patient_history.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
                 <td>'.$row["txtPatientGender"].'</td>
                 <td>'.$row["txtSGHSGroup"].'</td>
                 <td>'.$row["datBirthday"].'</td>

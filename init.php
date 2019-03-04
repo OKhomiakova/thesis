@@ -64,17 +64,17 @@ $createTblAnalysis = "CREATE TABLE tblAnalysis (
     intAnalysisId integer not null primary key,
     intPatientId integer not null,
     datAnalysis date,
-    decWeight decimal(3),
-    decIMT decimal(10),
-    decOHS decimal(3),
-    decLPNP decimal(3),
-    decLPVP decimal(3),
-    decTG decimal(3),
-    decLPa decimal(4),
-    decAST decimal(5),
-    decALT decimal(5),
-    decBilirubin decimal(3),
-    decGlucose decimal(3)
+    decWeight decimal(4,1),
+    decIMT decimal(4,1),
+    decOHS decimal(3,1),
+    decLPNP decimal(3,1),
+    decLPVP decimal(2,1),
+    decTG decimal(2,1),
+    decLPa decimal(3,2),
+    decAST decimal(5,1),
+    decALT decimal(5,1),
+    decBilirubin decimal(4,1),
+    decGlucose decimal(3,1)
     )";	
     
 $createTblTherapy = "CREATE TABLE tblTherapy (

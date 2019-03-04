@@ -92,7 +92,7 @@
                         <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
                         </div>
                     <label for="height">Рост</label>
-                    <input type="number" id="height" name="height" required>
+                    <input type="number" id="height" name="height" min="100" max="250" required>
                     <input type="submit" value="Внести данные">
                 </div>
         </fieldset>

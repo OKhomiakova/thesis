@@ -32,13 +32,35 @@
     </nav>
 <div class="form-group">
    <div class="input-group">
+      <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control">
       <span class="input-group-addon">Search</span>
-      <input type="text" name="search_text" id="search_text" placeholder="Найти пациента..." class="form-control">
       </div>
 </div>
 <div id="result"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="search.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#search_text').keyup(function(){
+        var txt = $(this).val();
+        if(txt == '') {
+            $('#result').html(txt);
+        } else {
+            $('#result').html('');
+            $.ajax({
+                url:"show_patient_history.php",
+                method:"post",
+                data:{search:txt},
+                dataType:"text",
+                success:function(data)
+                {
+                    $('#result').html(data);
+                }
+
+            });
+        }
+    });
+});
+</script>
 <?php include 'footer.php';?>
 </body>
 </html>
