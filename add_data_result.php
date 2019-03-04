@@ -44,7 +44,7 @@
 
     printf("<p> %s </p>", $new_txtPatientFullName);
 
-    $insertIntoTblAnalysis = "INSERT into tblAnalysis (intAnalysisId, intPatientId, datAnalysis, decWeight, decIMT, decOHS, decLPNP, decLPVP, decTG, decLPa, decAST, decALT, decBilirubin, decGlucose) values ($new_id, $new_intPatientId, '$new_datAnalysis', э$new_decWeight, '$new_intIMT', '$new_intOHS', '$new_intLPNP', $new_intLPVP, '$new_intTG', '$new_intLPa', '$new_intAST', '$new_intALT', '$new_intBilirubin', '$new_intglucose')";
+    $insertIntoTblAnalysis = "INSERT into tblAnalysis (intAnalysisId, intPatientId, datAnalysis, decWeight, decIMT, decOHS, decLPNP, decLPVP, decTG, decLPa, decAST, decALT, decBilirubin, decGlucose) values ($new_id, $new_intPatientId, '$new_datAnalysis', $new_decWeight, '$new_intIMT', '$new_intOHS', '$new_intLPNP', $new_intLPVP, '$new_intTG', '$new_intLPa', '$new_intAST', '$new_intALT', '$new_intBilirubin', '$new_intglucose')";
 
     if (mysqli_query($link, $insertIntoTblAnalysis) === TRUE) {
         echo "<p> Patient witd id  #$new_id succesfully added! </p>";
