@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Новый пациент</title>
-    <link rel="stylesheet" href=".\style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
@@ -19,7 +19,8 @@
                     <a href="search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
                 </div>
             </li>
-            <li><a href="add_result.php">Результаты исследований и назначение терапии</a></li>
+            <li><a href="add_result.php">Результаты исследований</a></li>
+            <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="report.html">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
@@ -42,21 +43,22 @@
                     <input type="text" id="patientName" name="patientName" required>
                     <label for="patientGender">Пол</label>
                     <select name="gender" id="patientGender" required>
+                    <option value="" selected disabled>Please select an option...</option>
                         <option value="Мужской" selected>Мужской</option>
                         <option value="Женский">Женский</option>
                     </select>
+                    <label for="patientDateOfBirth">Дата рождения</label>
+                    <input type="date" id="patientDateOfBirth" name="bithDay" required>
+                    <label for="patientAge">Возраст</label>
+                    <input type="number" id="patientAge" name="age" min="0" required>      
                     <label for="SGHSGroup">Группа СГХС</label>
                     <select name="SGHSGroup" id="SGHSGroup" required>
                         <option value="Определенная" selected>Определенная</option>
                         <option value="Возможная">Возможная</option>
                         <option value="Вероятная">Вероятная</option>
                     </select>
-                    <label for="patientAge">Возраст</label>
-                    <input type="number" id="patientAge" name="age" min="0" required>
-                    <label for="patientDateOfBirth">Дата рождения</label>
-                    <input type="date" id="patientDateOfBirth" name="bithDay" required>
                     <label for="mutation">Мутации</label>
-                    <div class="align" style="display:flex;">
+                    <div class="align">
                         <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
                         <p><input type="radio" id="mutation" name="mutation" value="Нет" selected>Нет</p>
                     </div>
@@ -77,7 +79,7 @@
                         <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
                         <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
                         </div>
-                    <label for="nutStatus">Нутриритивный статус</label>
+                    <label for="nutStatus">Нутритивный статус</label>
                     <select name="nutStatus" id="nutStatus" required>
                             <option value="Гипотрофия">Гипотрофия</option>
                             <option value="Норма" selected>Норма</option>

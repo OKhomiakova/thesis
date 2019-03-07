@@ -12,6 +12,7 @@ header {
     padding: 10px 20px 10px 20px;
     text-align: center;
 }
+
 img{
     height: 100px;
     width: auto;
@@ -31,14 +32,13 @@ ul {
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
 }
-  
+ 
 li {
     float: left;
     border-right: 1px solid #bbb;
-
 }
 
-li:nth-child(3){
+li:nth-child(4){
     border-right: none;
 }
 
@@ -65,7 +65,7 @@ li a:hover{
 
 li.dropdown {
     display: inline-block;
-  }
+}
   
 .dropdown-content {
     display: none;
@@ -74,7 +74,7 @@ li.dropdown {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
+}
   
 .dropdown-content a {
     color: black;
@@ -82,7 +82,7 @@ li.dropdown {
     text-decoration: none;
     display: block;
     text-align: left;
-  }
+}
   
 .dropdown-content a:hover {
     color: white;
@@ -110,21 +110,68 @@ footer a{
 footer a:hover{
     text-decoration: none;
     background-color: #CCCCCC;
-    color: #3366FF;
+    color: #6699FF;
 }
 
- .passport {
+.passport {
     display: grid;
+
 }
 
 label {
+    padding: 0%;
     margin-bottom: 0%;
     margin-top: 10px;
     font-size: 20px;
     text-decoration: none;
 }
 
-.align {
-    display: flex;
+input:not([type=radio]):not([type=submit]), select{
+    border: 1px solid #e7e7e7;
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 200px;
+    font-size: 14px;
+    padding: 12px 16px;
+    background-color: #6699FF;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 
+input[type=submit]:active {
+    padding: 12px 16px;
+    background-color: #3366FF;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: none;
+}
+
+input[type=text], [type=number], select{
+    outline-color: #6699FF;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: #6699FF;
+    color: white;
+}
+  
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+/* .align {
+    display: flex;
+} */

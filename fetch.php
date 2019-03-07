@@ -13,15 +13,15 @@ mysqli_set_charset($link, "utf8");
 
  $result = mysqli_query($link, $sql);
  if(mysqli_num_rows($result)>0){
-    $output .= '<h4 aligh="center"> Результаты поиска:</h4>';
+    $output .= "<h4 style='text-align:center;'> Результаты поиска:</h4>";
     $output .= '<div class="table-responsive">
                     <table class="table bordered"
                         <tr>
                             <th>Номер ИБ</th>
                             <th>ФИО пациента</th>
                             <th>Пол</th>
-                            <th>Группа СГХС</th>
                             <th>Дата рождения</th>
+                            <th>Группа СГХС</th>
                         </tr>';
     while($row = mysqli_fetch_array($result)){
     
@@ -30,8 +30,8 @@ mysqli_set_charset($link, "utf8");
                 <td>'.$row["intDiseaseHistoryNumber"].'</td>
                 <td><a href="add_result.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
                 <td>'.$row["txtPatientGender"].'</td>
-                <td>'.$row["txtSGHSGroup"].'</td>
                 <td>'.$row["datBirthday"].'</td>
+                <td>'.$row["txtSGHSGroup"].'</td>
             </tr>';
     }
     echo $output;
@@ -39,6 +39,6 @@ mysqli_set_charset($link, "utf8");
 
  } else {
 
-     echo "<h4> К сожалению, по Вашему запросу ничего не было найдено. </h4>";
+     echo "<h4 style='text-align:center;'> К сожалению, по Вашему запросу ничего не было найдено. </h4>";
  }
 ?>

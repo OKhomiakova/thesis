@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Результаты и назначения</title>
-    <link rel="stylesheet" href=".\style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
@@ -19,7 +19,8 @@
                     <a href="search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
                 </div>
             </li>
-            <li><a class ="active" href="add_result.php">Результаты исследований и назначение терапии</a></li>
+            <li><a href="add_result.php" class="active">Результаты исследований</a></li>
+            <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="report.html">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
@@ -35,12 +36,11 @@
             <?php 
                 if(!isset($_GET["id"])) {
                     $output = "";
-                    $output .= '<h2>Выберите пациента:</h2>
+                    $output .= '<h2 style="">Выберите пациента:</h2>
                     <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">Search</span>
+                        <div class="input-group" style="display:flex; justify-content: center;">
                             <input type="text" name="search_text" id="search_text" placeholder="Найти пациента..." class="form-control">
-                            </div>
+                        </div>
                     </div>
                     <div id="result"></div>';
                     echo $output;
@@ -68,8 +68,8 @@
                                                 <th>Номер ИБ</th>
                                                 <th>ФИО пациента</th>
                                                 <th>Пол</th>
-                                                <th>Группа СГХС</th>
                                                 <th>Дата рождения</th>
+                                                <th>Группа СГХС</th>
                                             </tr>';
                         while($row = mysqli_fetch_array($result)){
                             $output .= '
@@ -77,20 +77,21 @@
                                     <td>'.$row["intDiseaseHistoryNumber"].'</td>
                                     <td><a href="patient.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
                                     <td>'.$row["txtPatientGender"].'</td>
-                                    <td>'.$row["txtSGHSGroup"].'</td>
                                     <td>'.$row["datBirthday"].'</td>
+                                    <td>'.$row["txtSGHSGroup"].'</td>
                                 </tr>';
                         }
                     }
                     echo $output;
                 }
                 ?>
-                <h2>Результаты обследования:</h2>
-                    <legend>Результаты обследования:</legend>
+                <h2>Данные исследования:</h2>
+                    <legend>Результаты исследования:</legend>
+                    <span class="required_notification">* Обязательное поле</span>
                         <div class="passport">
                             <input name="id" type="hidden" value="<?php echo htmlspecialchars($_GET["id"]) ?>"/>
                             <label for="dateInput">Дата обследования</label>
-                            <input type="date" id="dateInput" name="dateInput" required>
+                            <input type="date" id="dateInput" name="dateInput" required autofocus>
                             <label for="weight">Вес</label>
                             <input type="number" id="weight" name="weight" min="30" max="150" step="any"  required>
                             <label for="IMT">ИМТ</label>

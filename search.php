@@ -19,7 +19,8 @@
                     <a href="search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
                 </div>
             </li>
-            <li><a href="add_result.php">Результаты исследований и назначение терапии</a></li>
+            <li><a href="add_result.php">Результаты исследований</a></li>
+            <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="report.html">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
@@ -31,10 +32,9 @@
         </ul>  
     </nav>
 <div class="form-group">
-   <div class="input-group">
-      <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control">
-      <span class="input-group-addon">Search</span>
-      </div>
+   <div class="input-group" style="display:flex; justify-content: center;">
+      <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control" autofocus>
+    </div>
 </div>
 <div id="result"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
