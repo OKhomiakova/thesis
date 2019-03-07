@@ -33,7 +33,7 @@
     </nav>
 <div class="form-group">
    <div class="input-group" style="display:flex; justify-content: center;">
-      <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control" autofocus>
+        <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control" autofocus>
     </div>
 </div>
 <div id="result"></div>
