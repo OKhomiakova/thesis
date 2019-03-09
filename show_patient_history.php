@@ -7,7 +7,7 @@
  $link = mysqli_connect($host, $user, $password, $db);
 mysqli_query($link, "set names cp1251");
 mysqli_set_charset($link, "utf8");
-echo '<h2 style="text-align:center;">Результаты поиска пациента в базе:</h2>';
+echo '<h2 style="text-align:center;">Результаты поиска в базе:</h2>';
  $output = '';
  $sql = "SELECT * FROM tblPatient WHERE txtPatientFullName LIKE '%".$_POST["search"]."%'";
 

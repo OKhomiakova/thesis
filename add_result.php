@@ -32,14 +32,16 @@
         </ul>  
     </nav>
     <form action="./add_data_result.php" method="POST">
-        <fieldset>
+    <div style='display: grid; justify-items:center;'>
+        <fieldset style='width: 80%;'>
+            <legend><h2>Выбор пациента</h2></legend>
             <?php 
                 if(!isset($_GET["id"])) {
                     $output = "";
-                    $output .= '<h2 style="">Выберите пациента:</h2>
+                    $output .= '
                     <div class="form-group">
                         <div class="input-group" style="display:flex; justify-content: center;">
-                            <input type="text" name="search_text" id="search_text" placeholder="Найти пациента..." class="form-control">
+                            <input type="text" name="search_text" id="search_text" placeholder="Введите фамилию пациента.." class="form-control" autofocus>
                         </div>
                     </div>
                     <div id="result"></div>';
@@ -61,7 +63,6 @@
                     $result = mysqli_query($link, $sql);
             
                     if(mysqli_num_rows($result)>0){
-                        $output .= '<h2 aligh="center"> Результаты поиска:</h2>';
                         $output .= '<div class="table-responsive">
                                         <table class="table bordered"
                                             <tr>
@@ -85,8 +86,9 @@
                     echo $output;
                 }
                 ?>
-                <h2>Данные исследования:</h2>
-                    <legend>Результаты исследования:</legend>
+                </fieldset>
+                <fieldset style='width: 80%;'>
+                    <legend><h2>Данные исследования</h2></legend>
                     <span class="required_notification">* Обязательное поле</span>
                         <div class="passport">
                             <input name="id" type="hidden" value="<?php echo htmlspecialchars($_GET["id"]) ?>"/>
@@ -117,6 +119,7 @@
                             <input type="submit" value="Внести данные">
                         </div>
         </fieldset>
+        </div>
     </form>
     <?php include 'footer.php';?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
