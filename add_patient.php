@@ -46,11 +46,11 @@
                     <input type="text" id="patientName" name="patientName" maxlength="100" required>
 
                     <div style="display:flex;">
-                        <div style="display:grid; flex: 40%;">
+                        <div style="display:grid; flex: 40%; margin-right: 10px;" >
                             <label for="patientDateOfBirth" style="position: relative;">Дата рождения</label>
                             <input type="date" id="patientDateOfBirth" name="bithDay" required>
                         </div>
-                        <div style="display:grid; flex: 40%;">
+                        <div style="display:grid; flex: 40%; margin-left: 10px;">
                             <label for="patientAge">Возраст</label>
                             <input type="number" id="patientAge" name="age" min="0" required>
                         </div>

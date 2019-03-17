@@ -129,6 +129,7 @@ td a:hover, footer a:hover {
 
 
 .passport{
+    width: 70%;
     display: grid;
     margin-left: 17%;
     margin-right: 17%;
@@ -145,7 +146,6 @@ label {
 
 input:not([type=radio]):not([type=submit]), select{
     border: 1px solid #CCCCCC;
-    width: 70%;
     padding: 12px 20px;
     margin: 8px 0px;
     box-sizing: border-box;
@@ -172,6 +172,7 @@ input[type=submit]:active {
 }
 
 #search_text {
+    width: 70%;
     background-image: url('img/searchicon.png');
     background-position: 5px 5px; 
     background-repeat: no-repeat;
@@ -202,6 +203,6 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.align {
+/* .align {
     display: flex;
-}
+} */
