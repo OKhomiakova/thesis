@@ -20,8 +20,8 @@
                 </div>
             </li>
             <li><a href="add_result.php">Результаты исследований</a></li>
-            <li><a href="add_therapy.php" class="active">Назначение терапии</a></li>
-            <li><a href="create_report.php">Создать отчет</a></li>
+            <li><a href="add_therapy.php">Назначение терапии</a></li>
+            <li><a href="create_report.php" class="active">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
                     <div class="dropdown-content">
@@ -31,10 +31,9 @@
                 </li>
         </ul>  
     </nav>
-    <form action="./add_data_therapy.php" method="POST" name="add_therapy">
     <div style='display: grid; justify-items:center;'>
-        <fieldset style='width: 80%;'>
-            <legend><h2>Выбор пациента</h2></legend>
+        <fieldset style='width: 80%; display: grid;'>
+            <legend><h2>Сформировать отчет</h2></legend>
             <?php 
                 if(!isset($_GET["id"])) {
                     $output = "";
@@ -85,46 +84,21 @@
                         }
                     }
                     $output .= '</table>';
+                    
+                    $output .= '<input id="height" name="height" type="hidden" value="';
+                    $output .= $p_height;
+                    $output .= '"/>';
                     $output .= '</div>';
                     echo $output;
                 }
                 ?>
-                </fieldset>
-                <fieldset style='width: 80%;'>
-                    <legend><h2>Назначение терапии</h2></legend>
-                    <span class="required_notification">* Обязательное поле</span>
-                        <div class="passport">
-                            <input name="id" type="hidden" value="<?php echo htmlspecialchars($_GET["id"]) ?>"/>
-                            <label for="dateInput">Дата назначения</label>
-                            <input type="date" id="dateInput" name="dateInput" required autofocus>
-                            <label for="drug">Препарат</label>
-                            <select name="drug" id="drug" required>
-                                <option value="" selected disabled>Please select an option...</option>
-                                <option value="drug2" selected>drug1</option>
-                                <option value="drug2">drug2</option>
-                            </select>
-                            <label for="dosage">Доза</label>
-                            <select name="dosage" id="dosage" required>
-                                <option value="" selected disabled>Please select an option...</option>
-                                <option value="Низкая" selected>Низкая</option>
-                                <option value="Средняя">Средняя</option>
-                                <option value="Высокая">Высокая</option>
-                            </select>
-                            <label for="therapyOK">Переносимость</label>
-                            <select name="therapyOK" id="therapyOK" required>
-                                <option value="" selected disabled>Please select an option...</option>
-                                <option value="Да" selected>Да</option>
-                                <option value="Нет">Нет</option>
-                            </select>
-                            <input type="submit" value="Внести данные">
-                        </div>
+                <input type="submit" value="Создать">
         </fieldset>
-        </div>
-    </form>
+    </div>
     <?php include 'footer.php';?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
+    <script>
+     $(document).ready(function(){
     $('#search_text').keyup(function(){
         var txt = $(this).val();
         if(txt == '') {
@@ -132,7 +106,7 @@ $(document).ready(function(){
         } else {
             $('#result').html('');
             $.ajax({
-                url:"show_therapy_for_patient.php",
+                url:"show_report_for_patient.php",
                 method:"post",
                 data:{search:txt},
                 dataType:"text",
@@ -140,10 +114,10 @@ $(document).ready(function(){
                 {
                     $('#result').html(data);
                 }
-
             });
         }
     });
-});</script>
+});
+</script>
 </body>
-</html>
+</head>

@@ -21,7 +21,7 @@
             </li>
             <li><a href="add_result.php">Результаты исследований</a></li>
             <li><a href="add_therapy.php">Назначение терапии</a></li>
-            <li><a href="report.html">Создать отчет</a></li>
+            <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
                     <div class="dropdown-content">
@@ -50,7 +50,14 @@
         $sql2 = "SELECT * FROM tblAnalysis WHERE intPatientId=".$id."";
         $result2 = mysqli_query($link, $sql2);
         $row1 = mysqli_fetch_array($result2);
-        printf("<h1>Пациент %s</h1><p><i>Дата ввода данных: %s<br>Номер ИБ: %s<br>Пол: %s<br>Группа СГХС: %s<br>Возраст: %s<br>Дата рождения: %s<br>Мутация: %s<br>ИБС: %s<br>ОИМ в анамнезе: %s<br>АГ: %s<br>Курение: %s<br>Нутритивный статус: %s<br>Операция в анамнезе: %s<br>Примержен терапии: %s<br>Рост (см): %s</i></p>",$row['txtPatientFullName'],$row['datInput'],$row['intDiseaseHistoryNumber'],$row['txtPatientGender'],$row['txtSGHSGroup'],$row['intPatientAge'],$row['datBirthday'],$row['txtMutation'],$row['txtIBS'],$row['intOIM'],$row['txtAG'],$row['txtSmoking'],$row['txtNutritionSatus'],$row['txtOperation'],$row['txtTherapyOK'],$row['intHeight']);
+        printf("<form action='./edit.php' method='POST' name='edit_data'>
+        <h1>Пациент %s</h1>
+        <div style='display: flex; justify-content:center;'>
+        <fieldset>
+        <legend><h2 style='margin: 0;'>Паспорт пациента</h2></legend>
+                <div class='passport'>
+        <label for='dateInput'>Дата ввода данных</label></br>
+        <input type='date' id='dateInput' name='dateInput' value='%s'></br></div></fieldset></div></form>",$row['txtPatientFullName'],$row['datInput']);
         do{
         printf("<table border='1'><tr><td><b>Дата исследования:</b></td><td>%s</td></tr>
         <tr><td><b>Вес:</b></td><td>%s</td></tr>

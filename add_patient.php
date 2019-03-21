@@ -21,7 +21,7 @@
             </li>
             <li><a href="add_result.php">Результаты исследований</a></li>
             <li><a href="add_therapy.php">Назначение терапии</a></li>
-            <li><a href="report.html">Создать отчет</a></li>
+            <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
                     <div class="dropdown-content">
@@ -31,7 +31,7 @@
                 </li>
         </ul>  
     </nav>
-    <form action="./add_data_patient.php" method="POST">
+    <form name="add_patient" action="./add_data_patient.php" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
             <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
@@ -73,7 +73,7 @@
                     <label for="IBS">ИБС</label>
                     <div class="align">
                         <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
-                        <p><input type="radio" id="IBS" name="ibs" value="Да" checked>Нет</p>
+                        <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
                     </div>
 
                     <label for="OIM">ОИМ в анамнезе</label>
@@ -85,7 +85,7 @@
                     <label for="AG">АГ</label>
                     <div class="align">
                         <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
-                        <p><input type="radio" id="AG" name="ag" value="Да" checked>Нет</p>
+                        <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
                     </div>
                     
                     <label for="nutStatus">Нутритивный статус</label>
@@ -123,5 +123,22 @@
         </div>
     </form>
     <?php include 'footer.php';?>
+    <script>
+
+        let form = document.forms.add_patient;
+
+        form.bithDay.onchange = calculate;
+
+        function calculate() {
+            let bday = document.getElementById('patientDateOfBirth').value;
+            var today = new Date();
+            bday = new Date(bday);
+            var timeDiff = Math.abs(today.getTime() - bday.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+            res = diffDays / 365;
+            res = (res - 0.5).toFixed(0);
+            document.getElementById('patientAge').value = res;
+        }
+    </script>
 </body>
 </html>

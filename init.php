@@ -82,8 +82,8 @@ $createTblTherapy = "CREATE TABLE tblTherapy (
     intPatientId integer not null,
     datPrescription date,
     txtDrugName varchar(100),
-    txtDrugDose varchar(3),
-    binTolerance binary
+    txtDrugDose varchar(10),
+    txtTolerance varchar(10)
     )";		
     
 $createTblDrug = "CREATE TABLE tblDrug (

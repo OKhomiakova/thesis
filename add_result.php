@@ -21,7 +21,7 @@
             </li>
             <li><a href="add_result.php" class="active">Результаты исследований</a></li>
             <li><a href="add_therapy.php">Назначение терапии</a></li>
-            <li><a href="report.html">Создать отчет</a></li>
+            <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
                     <a class="dropbtn" href="javascript:void(0)">Username</a>
                     <div class="dropdown-content">
@@ -31,7 +31,7 @@
                 </li>
         </ul>  
     </nav>
-    <form action="./add_data_result.php" method="POST">
+    <form action="./add_data_result.php" method="POST" name="add_result">
     <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
             <legend><h2>Выбор пациента</h2></legend>
@@ -48,7 +48,6 @@
                     echo $output;
                 } else {
                     $id = $_GET["id"];
-        
                     $host = "localhost";
                     $user = "root";
                     $password = "";
@@ -62,6 +61,7 @@
                     $sql = "SELECT * FROM tblPatient WHERE intPatientId=".$id."";
                     $result = mysqli_query($link, $sql);
             
+                    $p_height = 0;
                     if(mysqli_num_rows($result)>0){
                         $output .= '<div class="table-responsive">
                                         <table class="table bordered"
@@ -73,16 +73,23 @@
                                                 <th>Группа СГХС</th>
                                             </tr>';
                         while($row = mysqli_fetch_array($result)){
+                            $p_height = $row["intHeight"];
                             $output .= '
                                 <tr>
                                     <td>'.$row["intDiseaseHistoryNumber"].'</td>
-                                    <td><a href="patient.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
+                                    <td>'.$row["txtPatientFullName"].'</a></td>
                                     <td>'.$row["txtPatientGender"].'</td>
                                     <td>'.$row["datBirthday"].'</td>
                                     <td>'.$row["txtSGHSGroup"].'</td>
                                 </tr>';
                         }
                     }
+                    $output .= '</table>';
+                    
+                    $output .= '<input id="height" name="height" type="hidden" value="';
+                    $output .= $p_height;
+                    $output .= '"/>';
+                    $output .= '</div>';
                     echo $output;
                 }
                 ?>
@@ -91,6 +98,7 @@
                     <legend><h2>Данные исследования</h2></legend>
                     <span class="required_notification">* Обязательное поле</span>
                         <div class="passport">
+                            <input id="file_to_redirect" type="hidden" value="go fuck ypurself"/>
                             <input name="id" type="hidden" value="<?php echo htmlspecialchars($_GET["id"]) ?>"/>
                             <label for="dateInput">Дата обследования</label>
                             <input type="date" id="dateInput" name="dateInput" required autofocus>
@@ -123,6 +131,26 @@
     </form>
     <?php include 'footer.php';?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        let form = document.forms.add_result;
+
+        form.weight.onchange = calculate;
+
+        function calculate() {
+            let wght = document.getElementById('weight').value;
+            let hght = document.getElementById('height').value;
+            if(wght == "") wght = "0";
+            wght = parseInt(wght, 10);
+            hght = parseInt(hght, 10);
+            // alert(hght);
+            // alert(wght);
+            let res = hght * hght;
+            if(wght != 0) res = res / wght;
+            res = res.toFixed(1);
+            document.getElementById('IMT').value = res;
+        }
+    </script>
 <script src="search.js"></script>
 </body>
 </html>
