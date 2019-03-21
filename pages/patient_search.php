@@ -37,6 +37,7 @@
    <div class="input-group" style="display:flex; justify-content: center;">
         <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control" autofocus>
     </div>
+    <input id="file_to_redirect" type="hidden" value="patient_history.php"/>
 </div>
 <div id="result"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -94,6 +94,7 @@
                     <legend><h2>Назначение терапии</h2></legend>
                     <span class="required_notification">* Обязательное поле</span>
                         <div class="passport">
+                            <input id="file_to_redirect" type="hidden" value="add_therapy.php"/>
                             <input name="id" type="hidden" value="<?php echo htmlspecialchars($_GET["id"]) ?>"/>
                             <label for="dateInput">Дата назначения</label>
                             <input type="date" id="dateInput" name="dateInput" required autofocus>

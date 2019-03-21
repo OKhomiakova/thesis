@@ -92,6 +92,7 @@
                     echo $output;
                 }
                 ?>
+                <input id="file_to_redirect" type="hidden" value="create_result.php"/>
                 <input type="submit" value="Создать">
         </fieldset>
     </div>

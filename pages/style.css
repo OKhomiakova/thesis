@@ -175,7 +175,7 @@ input[type=submit]:active {
 
 #search_text {
     width: 70%;
-    background-image: url('img/searchicon.png');
+    background-image: url(../img/searchicon.png);
     background-position: 5px 5px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;

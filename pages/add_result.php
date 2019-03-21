@@ -98,7 +98,7 @@
                     <legend><h2>Данные исследования</h2></legend>
                     <span class="required_notification">* Обязательное поле</span>
                         <div class="passport">
-                            <input id="file_to_redirect" type="hidden" value="go fuck ypurself"/>
+                            <input id="file_to_redirect" type="hidden" value="add_result.php"/>
                             <input name="id" type="hidden" value="<?php echo htmlspecialchars($_GET["id"]) ?>"/>
                             <label for="dateInput">Дата обследования</label>
                             <input type="date" id="dateInput" name="dateInput" required autofocus>
