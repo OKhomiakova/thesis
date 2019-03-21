@@ -16,7 +16,7 @@
                 <a class="active dropbtn" href="javascript:void(0)">Пациенты</a>
                 <div class="dropdown-content">
                     <a href="add_patient.php"><i class="fas fa-plus"></i>&nbsp;Новый пациент</a>
-                    <a href="search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
+                    <a href="patient_search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
                 </div>
             </li>
             <li><a href="add_result.php">Результаты исследований</a></li>
