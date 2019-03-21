@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#search_text').keyup(function(){
         var txt = $(this).val();
-        var olyaPNH = $('#file_to_redirect').val();
+        var redirect_file = $('#file_to_redirect').val();
         if(txt == '') {
             $('#result').html(txt);
         } else {
@@ -9,7 +9,7 @@ $(document).ready(function(){
             $.ajax({
                 url:"fetch.php",
                 method:"post",
-                data:{search:txt, file:olyaPNH},
+                data:{search:txt, file_to_redirect:redirect_file},
                 dataType:"text",
                 success:function(data)
                 {

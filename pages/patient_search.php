@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
-<?php include 'header.php';?>
+<?php 
+    include 'header.php';
+?>
 <nav>
         <ul>
             <li class="dropdown"> 
@@ -38,28 +40,9 @@
 </div>
 <div id="result"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function(){
-    $('#search_text').keyup(function(){
-        var txt = $(this).val();
-        if(txt == '') {
-            $('#result').html(txt);
-        } else {
-            $('#result').html('');
-            $.ajax({
-                url:"show_patient_history.php",
-                method:"post",
-                data:{search:txt},
-                dataType:"text",
-                success:function(data)
-                {
-                    $('#result').html(data);
-                }
-            });
-        }
-    });
-});
-</script>
-<?php include 'footer.php';?>
+<script src="search.js"></script>
+<?php 
+    include 'footer.php';
+?>
 </body>
 </html>

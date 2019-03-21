@@ -1,4 +1,4 @@
-<?php
+w<?php
  $host = "localhost";
  $user = "root";
  $password = "";
@@ -27,7 +27,7 @@ echo '<h2 style="text-align:center;">Результаты поиска в баз
         $output .= '
             <tr>
                 <td>'.$row["intDiseaseHistoryNumber"].'</td>
-                <td><a href="patient_history.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
+                <td><a href="add_therapy.php?id='.$row["intPatientId"].'">'.$row["txtPatientFullName"].'</a></td>
                 <td>'.$row["txtPatientGender"].'</td>
                 <td>'.$row["datBirthday"].'</td>
                 <td>'.$row["txtSGHSGroup"].'</td>

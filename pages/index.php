@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
-    <?php include 'header.php';?>
+    <?php 
+        include 'header.php';
+    ?>
     <nav>
         <ul>
             <li class="dropdown"> 
                 <a class="active dropbtn" href="javascript:void(0)">Пациенты</a>
                 <div class="dropdown-content">
                     <a href="add_patient.php"><i class="fas fa-plus"></i>&nbsp;Новый пациент</a>
-                    <a href="search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
+                    <a href="patient_search.php"><i class="fas fa-search"></i>&nbsp;Найти</a>
                 </div>
             </li>
             <li><a href="add_result.php">Результаты исследований</a></li>
@@ -31,6 +33,8 @@
                 </li>
         </ul>  
     </nav>
-    <?php include 'footer.php';?>
+    <?php 
+        include 'footer.php';
+    ?>
 </body>
 </html>
