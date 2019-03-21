@@ -31,7 +31,7 @@
                 </li>
         </ul>  
     </nav>
-    <form action="./add_data_therapy.php" method="POST" name="add_therapy">
+    <form action="../logic/add_data_therapy.php" method="POST" name="add_therapy">
     <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
             <legend><h2>Выбор пациента</h2></legend>
@@ -123,27 +123,6 @@
     </form>
     <?php include 'footer.php';?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $('#search_text').keyup(function(){
-        var txt = $(this).val();
-        if(txt == '') {
-            $('#result').html(txt);
-        } else {
-            $('#result').html('');
-            $.ajax({
-                url:"show_therapy_for_patient.php",
-                method:"post",
-                data:{search:txt},
-                dataType:"text",
-                success:function(data)
-                {
-                    $('#result').html(data);
-                }
-
-            });
-        }
-    });
-});</script>
+<script src="../logic/search.js"></script>
 </body>
 </html>

@@ -40,7 +40,7 @@
 </div>
 <div id="result"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="search.js"></script>
+<script src="../logic/search.js"></script>
 <?php 
     include 'footer.php';
 ?>

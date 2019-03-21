@@ -97,27 +97,6 @@
     </div>
     <?php include 'footer.php';?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-     $(document).ready(function(){
-    $('#search_text').keyup(function(){
-        var txt = $(this).val();
-        if(txt == '') {
-            $('#result').html(txt);
-        } else {
-            $('#result').html('');
-            $.ajax({
-                url:"show_report_for_patient.php",
-                method:"post",
-                data:{search:txt},
-                dataType:"text",
-                success:function(data)
-                {
-                    $('#result').html(data);
-                }
-            });
-        }
-    });
-});
-</script>
+    <script src='../logic/search.js'></script>
 </body>
 </head>

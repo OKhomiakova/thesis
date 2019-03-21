@@ -31,7 +31,7 @@
                 </li>
         </ul>  
     </nav>
-    <form action="./add_data_result.php" method="POST" name="add_result">
+    <form action="../logic/add_data_result.php" method="POST" name="add_result">
     <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
             <legend><h2>Выбор пациента</h2></legend>
@@ -151,6 +151,6 @@
             document.getElementById('IMT').value = res;
         }
     </script>
-<script src="search.js"></script>
+<script src="../logic/search.js"></script>
 </body>
 </html>

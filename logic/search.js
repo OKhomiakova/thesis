@@ -7,7 +7,7 @@ $(document).ready(function(){
         } else {
             $('#result').html('');
             $.ajax({
-                url:"fetch.php",
+                url:"../logic/fetch.php",
                 method:"post",
                 data:{search:txt, file_to_redirect:redirect_file},
                 dataType:"text",
