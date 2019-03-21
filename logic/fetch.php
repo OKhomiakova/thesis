@@ -11,9 +11,6 @@
 
     $output = '';
     $sql = "SELECT * FROM tblPatient WHERE txtPatientFullName LIKE '%".$_POST["search"]."%'";
-
-    var_dump($_POST);
-
     $redir_file = $_POST["file_to_redirect"];
 
     $result = mysqli_query($link, $sql);
@@ -29,7 +26,6 @@
                                 <th>Группа СГХС</th>
                             </tr>';
         while($row = mysqli_fetch_array($result)){
-        
             $output .= '
                 <tr>
                     <td>'.$row["intDiseaseHistoryNumber"].'</td>

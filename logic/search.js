@@ -5,7 +5,6 @@ $(document).ready(function(){
         if(txt == '') {
             $('#result').html(txt);
         } else {
-            $('#result').html('');
             $.ajax({
                 url:"../logic/fetch.php",
                 method:"post",
