@@ -1,7 +1,8 @@
 <?php
-	session_start();
-	$error = '';
 	if(isset($_POST["submit"])) {
+		echo "dsds";
+		session_start();
+		$error = '';
 		if(empty($_POST['login']) || empty($_POST['password'])) {
 			$error = "Неверное имя пользователя или пароль";
 		}
