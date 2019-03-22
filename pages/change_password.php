@@ -12,31 +12,6 @@
     <?php 
         include 'header.php';
     ?>
-    <nav>
-        <ul>
-            <li class="dropdown"> 
-                <a class="active dropbtn" href="javascript:void(0)">Пользователи</a>
-                <div class="dropdown-content">
-                    <a href="admin_add_user.php"><i class="fas fa-user-plus"></i>&nbsp;Добавить</a>
-                    <a href="admin_delete_user.php"><i class="fas fa-user-times"></i>&nbsp;Удалить</a>
-                </div>
-            </li>
-            <li class="dropdown"> 
-                    <a class="dropbtn" href="javascript:void(0)">Препараты</a>
-                    <div class="dropdown-content">
-                        <a href="admin_add_drug.php"><i class="fas fa-plus"></i>&nbsp;Добавить</a>
-                        <a href="admin_delete_drug.php"><i class="fas fa-minus"></i>&nbsp;Удалить</a>
-                    </div>
-            </li>
-            <li class="dropdown" style="float: right;"> 
-                    <a class="dropbtn" href="javascript:void(0)">Username</a>
-                    <div class="dropdown-content">
-                        <a href="change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
-                        <a href=""><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
-                    </div>
-            </li>
-        </ul>  
-    </nav>
     <form name="add_user" action="./add_data_user.php" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
