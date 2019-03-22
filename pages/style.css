@@ -43,7 +43,7 @@ li {
     border-right: 1px solid #bbb;
 }
 
-li:nth-child(4){
+li:nth-last-child(2){
     border-right: none;
 }
 

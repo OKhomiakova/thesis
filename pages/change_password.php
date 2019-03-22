@@ -13,25 +13,15 @@
             <img src="../img/logo.png" alt="ИС 'Регистр больных с патологией СГХС'">
             <h1> Информационная система <br> "Регистр больных с патологией СГХС" </h1>
     </header>
-    <form name="add_user" action="../logic/change_password.php" method="POST">
-    <div style='display: flex; justify-content:center;'>
-        <fieldset style='width: 80%;' >
-            <legend><h2 style="margin: 0;">Смена пароля</h2></legend>
-                <div class="passport">
-
-                    <label for="oldPassword">Старый пароль</label>
-                    <input type="password" id="oldPassword" name="oldPassword" maxlength="100" required>
-
-                    <label for="newPassword1">Новый пароль</label>
-                    <input type="password" id="newPassword1" name="newPassword1" maxlength="100" required>
-
-                    <label for="newPassword2">Повторить новый пароль</label>
-                    <input type="password" id="newPassword2" name="newPassword2" maxlength="100" required>
-
+    <form name="add_user" action="../logic/change_password.php" method="POST">   
+                <div class="passport login-form" style="margin-top: 25px; margin-bottom: 25px;">
+                    <div class="container">
+                        <input type="password" id="oldPassword" name="oldPassword" maxlength="100" placeholder="Старый пароль" required>
+                        <input type="password" id="newPassword1" name="newPassword1" maxlength="100" placeholder="Новый пароль" required>
+                        <input type="password" id="newPassword2" name="newPassword2" maxlength="100" placeholder="Повторите новый пароль" required>
+                    </div>
                     <input type="submit" value="Сохранить новый пароль">
                 </div>
-        </fieldset>
-        </div>
     </form>
     <?php 
         include 'footer.php';
