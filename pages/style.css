@@ -212,3 +212,30 @@ tr:nth-child(even) {
 fieldset {
     width: 80%;
 }
+
+.login-form {
+    display: grid;
+    background: #FFFFFF;
+    max-width: 50%;
+    margin: 20px auto 100px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    justify-items: center;
+}
+
+.login-form h1, .login-form span {
+    text-align: center;
+    margin: 0%;
+}
+
+.login-form span {
+    margin: 10px 20px;
+    text-decoration: none;
+}
+
+.login-form .container{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
