@@ -217,7 +217,7 @@ fieldset {
     display: grid;
     background: #FFFFFF;
     max-width: 50%;
-    margin: 20px auto 100px;
+    margin: 50px auto 100px;
     padding: 30px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -235,7 +235,6 @@ fieldset {
 }
 
 .login-form .container{
-    width: 100%;
     display: grid;
-    justify-content: center;
+    width: 70%;
 }
