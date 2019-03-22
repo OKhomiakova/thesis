@@ -35,7 +35,7 @@
                     <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name'] ?></a>
                     <div class="dropdown-content">
                         <a href="../change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
-                        <a href=""><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
+                        <a href="../../logic/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
                     </div>
             </li>
         </ul>  
