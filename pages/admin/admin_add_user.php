@@ -1,3 +1,6 @@
+<?php
+    include ("../../logic/check_admin.php");
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>

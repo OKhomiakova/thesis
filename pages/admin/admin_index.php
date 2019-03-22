@@ -1,3 +1,6 @@
+<?php
+    include ("../../logic/check_admin.php");
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -29,7 +32,7 @@
                     </div>
             </li>
             <li class="dropdown" style="float: right;"> 
-                    <a class="dropbtn" href="javascript:void(0)">Username</a>
+                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name'] ?></a>
                     <div class="dropdown-content">
                         <a href="../change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
                         <a href=""><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>

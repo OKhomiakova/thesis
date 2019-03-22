@@ -28,7 +28,11 @@
 		    	$row = mysqli_fetch_array($result);
 		    	$_SESSION['user_login'] = $row["txtUserLogin"];
 		    	$_SESSION['is_admin'] = $row["txtIsAdmin"];
-		    	header("location:index.php");
+		    	$_SESSION['user_name'] = $row["txtUserFullName"];
+		    	if($_SESSION['is_admin'] == "yes")
+		    		header("location:admin/admin_index.php");
+		    	else
+					header("location:user/user_index.php");
 		    }
 		    mysqli_close($link);
 		}

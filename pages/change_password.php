@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
-    <?php 
-        include 'header.php';
-    ?>
-    <form name="add_user" action="./add_data_user.php" method="POST">
+    <header>
+            <img src="../img/logo.png" alt="ИС 'Регистр больных с патологией СГХС'">
+            <h1> Информационная система <br> "Регистр больных с патологией СГХС" </h1>
+    </header>
+    <form name="add_user" action="../logic/change_password.php" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
             <legend><h2 style="margin: 0;">Смена пароля</h2></legend>

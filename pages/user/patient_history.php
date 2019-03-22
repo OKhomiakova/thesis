@@ -1,3 +1,6 @@
+<?php
+    include ("../../logic/check_user.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
