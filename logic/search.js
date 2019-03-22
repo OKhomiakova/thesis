@@ -6,7 +6,7 @@ $(document).ready(function(){
             $('#result').html(txt);
         } else {
             $.ajax({
-                url:"../logic/fetch.php",
+                url:"../../logic/fetch.php",
                 method:"post",
                 data:{search:txt, file_to_redirect:redirect_file},
                 dataType:"text",
