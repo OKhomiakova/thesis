@@ -51,7 +51,7 @@ $createTblPatient = "CREATE TABLE tblPatient (
     datBirthday date NOT NULL,
     txtMutation varchar(4) NOT NULL,
     txtIBS varchar(4) NOT NULL,
-    intOIM integer(10)NOT NULL,
+    intOIM integer(10) NOT NULL,
     txtAG varchar(4) NOT NULL,
     txtSmoking varchar(3) NOT NULL,
     txtNutritionSatus varchar(20) NOT NULL,
@@ -90,6 +90,14 @@ $createTblDrug = "CREATE TABLE tblDrug (
     intDrugId integer not null primary key,
     txtDrugName varchar(100)
     )";	
+
+$createTblUser = "CREATE TABLE tblUser (
+    intUserId integer not null primary key,
+    txtUserLogin varchar(100) NOT NULL,
+    txtUserFullName varchar(100) NOT NULL,
+    txtUserPassword varchar(100) NOT NULL,
+    txtIsAdmin varchar(100) NOT NULL
+    )"; 
 
 /* Создание таблицы не возвращает результирующего набора */
 if (mysqli_query($link, $createTblPatient) === TRUE) {
@@ -147,5 +155,18 @@ else {
     printf("<p>Error occured: %s </p>", mysqli_error($link));
 }
 
+
+if (mysqli_query($link, $createTblUser) === TRUE) {
+    printf("<p>Table tblUser has been created successfully.</p>");
+}
+else {
+    printf("<p>Error occured: %s </p>", mysqli_error($link));
+}
+if (mysqli_query($link, "ALTER TABLE tblUser CHARACTER SET utf8 COLLATE utf8_general_ci;") === TRUE) {
+    printf("<p>Table tblUser set to utf8_general_ci.</p>");
+}
+else {
+    printf("<p>Error occured: %s </p>", mysqli_error($link));
+}
 mysqli_close($link);
 ?>

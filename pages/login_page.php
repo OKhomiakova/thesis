@@ -1,3 +1,6 @@
+<?php
+    include ('../logic/login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +11,18 @@
     <title>Вход в систему</title>
 </head>
 <body>
-        <form class="login-form">
+        <form class="login-form" method="post">
             <h1>Добро пожаловать в ИС </br>"Регистр больных с патологией СГХС"</h1>
             <span>Для продолжения работы Вам необходимо авторизоваться!</span>
             <div class="container">
-                <input type="text" placeholder="Логин"/>
-                <input type="password" placeholder="Пароль"/>
+                <input type="text" name="login" placeholder="Логин"/>
+                <input type="password" name="password" placeholder="Пароль"/>
             </div>
+            <div style="color:red"><?php if(isset($error)) echo $error; ?></div>
                 <label>
                     <input type="checkbox" checked="checked" name="remember" checked> Запомнить меня
                 </label>
-            <input type="submit" value="Вход" style="margin: 10px;">
+            <input type="submit" name="submit" value="Вход" style="margin: 10px;">
         </form>
 </body>
 </html>

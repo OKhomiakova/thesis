@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    echo $_SESSION['user_login'];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
