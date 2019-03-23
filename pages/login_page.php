@@ -20,7 +20,7 @@
             </div>
             <div style="color:red"><?php if(isset($error)) echo $error; ?></div>
                 <label>
-                    <input type="checkbox" checked="checked" name="remember" checked> Запомнить меня
+                    <input type="checkbox" checked="checked" name="remember" checked> Запомнить меня на 30 дней
                 </label>
             <input type="submit" name="submit" value="Вход" style="margin: 10px;">
         </form>
