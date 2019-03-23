@@ -5,3 +5,5 @@
 4. Add pagination
 5. Add Excel reports
 6. Add patient passport page
+7. Add user addition logic
+8. [DONE] Fix logout popup menu
