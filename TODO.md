@@ -5,7 +5,7 @@
 4. [LATER] Add pagination
 5. Add Excel reports
 6. Add patient passport page
-7. Add user addition logic
+7. [DONE] Add user addition logic
 8. [DONE] Fix logout popup menu
 9. [DONE] Fix forms actions
 10. [DONE] Fix add report and add therapy forms

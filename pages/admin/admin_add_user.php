@@ -1,6 +1,6 @@
 <?php
     include ("../../logic/check_admin.php");
-    include ("./add_data_user.php");
+    include ("../../logic/add_data_user.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -45,8 +45,8 @@
             <legend><h2 style="margin: 0;">Новый пользователь</h2></legend>
                 <div class="passport">
 
-                    <label for="patientName">ФИО Пользователя</label>
-                    <input type="text" id="patientName" name="patientName" maxlength="100" required>
+                    <label for="userName">ФИО Пользователя</label>
+                    <input type="text" id="userName" name="userName" maxlength="100" required>
 
                     <div style="display:flex;">
                         <div style="display:grid; flex: 40%; margin-right: 10px;" >
@@ -58,7 +58,12 @@
                             <input type="text" id="password" name="password" required>
                         </div>
                     </div>
-                    <input type="submit" value="Создать">
+                    <label for="isAdmin">Права администратора</label>
+                    <div class="align">
+                        <p><input type="radio" id="isAdmin" name="isAdmin" value="yes" checked>Да</p>
+                        <p><input type="radio" id="isAdmin" name="isAdmin" value="no">Нет</p>
+                    </div> 
+                    <input type="submit" name="submit" value="Создать">
                 </div>
         </fieldset>
         </div>
