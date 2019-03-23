@@ -168,5 +168,6 @@ if (mysqli_query($link, "ALTER TABLE tblUser CHARACTER SET utf8 COLLATE utf8_gen
 else {
     printf("<p>Error occured: %s </p>", mysqli_error($link));
 }
+
 mysqli_close($link);
 ?>

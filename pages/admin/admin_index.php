@@ -27,7 +27,7 @@
             <li class="dropdown"> 
                     <a class="dropbtn" href="javascript:void(0)">Препараты</a>
                     <div class="dropdown-content">
-                        <a href=""><i class="fas fa-plus"></i>&nbsp;Добавить</a>
+                        <a href="admin_add_drug.php"><i class="fas fa-plus"></i>&nbsp;Добавить</a>
                         <a href=""><i class="fas fa-minus"></i>&nbsp;Удалить</a>
                     </div>
             </li>
