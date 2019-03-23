@@ -1,5 +1,8 @@
+<?php 
+    include ('../logic/change_password.php');
+?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +16,18 @@
             <img src="../img/logo.png" alt="ИС 'Регистр больных с патологией СГХС'">
             <h1> Информационная система <br> "Регистр больных с патологией СГХС" </h1>
     </header>
-    <form name="add_user" action="../logic/change_password.php" method="POST">   
+            
+            <form class="obossanyi" method="post">   
                 <div class="passport login-form" style="margin-top: 25px; margin-bottom: 25px;">
                     <div class="container">
                         <input type="password" id="oldPassword" name="oldPassword" maxlength="100" placeholder="Старый пароль" required>
                         <input type="password" id="newPassword1" name="newPassword1" maxlength="100" placeholder="Новый пароль" required>
                         <input type="password" id="newPassword2" name="newPassword2" maxlength="100" placeholder="Повторите новый пароль" required>
+                        <div style="color:red"><?php if(isset($error)) echo $error; ?></div>
                     </div>
-                    <input type="submit" value="Сохранить новый пароль">
+                    <input type="submit" name="submit" value="Сохранить новый пароль">
                 </div>
-    </form>
+            </form>
     <?php 
         include 'footer.php';
     ?>
