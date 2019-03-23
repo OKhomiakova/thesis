@@ -1,5 +1,6 @@
 <?php
     include ("../../logic/check_user.php");
+    include("../../logic/add_data_patient.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -34,7 +35,9 @@
                 </li>
         </ul>  
     </nav>
-    <form name="add_patient" action="../../logic/add_data_patient.php" method="POST">
+    <?php if(isset($message)) echo $message . "<br>"; ?>
+
+    <form name="add_patient" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
             <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
@@ -50,7 +53,7 @@
 
                     <div style="display:flex;">
                         <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                            <label for="patientDateOfBirth" style="position: relative;">Дата рождения</label>
+                            <label for="patientDateOfBirth">Дата рождения</label>
                             <input type="date" id="patientDateOfBirth" name="bithDay" required>
                         </div>
                         <div style="display:grid; flex: 40%; margin-left: 10px;">
@@ -120,7 +123,7 @@
                         <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
                     </div>
                     
-                    <input type="submit" value="Внести данные">
+                    <input type="submit" name="submit" value="Внести данные">
                 </div>
         </fieldset>
         </div>
