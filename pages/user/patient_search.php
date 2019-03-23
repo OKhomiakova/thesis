@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
-<?php 
-    include '../header.php';
-?>
-<nav>
+    <?php 
+      include '../header.php';
+    ?>
+    <nav>
         <ul>
             <li class="dropdown"> 
                 <a class="active dropbtn" href="javascript:void(0)">Пациенты</a>
@@ -36,17 +36,17 @@
                 </li>
         </ul>  
     </nav>
-<div class="form-group">
-   <div class="input-group" style="display:flex; justify-content: center;">
-        <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control" autofocus>
+    <div class="form-group">
+        <div class="input-group" style="display:flex; justify-content: center;">
+            <input type="text" name="search_text" id="search_text" placeholder="Найти пациента.." class="form-control" autofocus>
+        </div>
+        <input id="file_to_redirect" type="hidden" value="patient_history.php"/>
     </div>
-    <input id="file_to_redirect" type="hidden" value="patient_history.php"/>
-</div>
-<div id="result"></div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../../logic/search.js"></script>
-<?php 
-    include '../footer.php';
-?>
+    <div id="result"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../logic/search.js"></script>
+    <?php 
+        include '../footer.php';
+    ?>
 </body>
 </html>

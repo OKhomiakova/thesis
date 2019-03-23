@@ -1,5 +1,6 @@
 <?php
     include ("../../logic/check_user.php");
+    include ("../../logic/add_data_result.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -34,7 +35,6 @@
                 </li>
         </ul>  
     </nav>
-    <form action="../../logic/add_data_result.php" method="POST" name="add_result">
     <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
             <legend><h2>Выбор пациента</h2></legend>
@@ -42,6 +42,16 @@
                 include '../../logic/patient_select_table.php';
             ?>
         </fieldset>
+    </div>
+        <div style='display: grid; justify-items:center;'>
+        <?php 
+            if(isset($message)) {
+                echo $message;
+            }
+        ?>
+    </div>
+    <form method="POST" id="res_form" name="add_result">
+    <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
             <legend><h2>Данные исследования</h2></legend>
             <span class="required_notification">* Обязательное поле</span>
@@ -72,7 +82,7 @@
                     <input type="number" id="bilirubin" name="bilirubin" min="1.0" max="100.0" step="any" required>
                     <label for="glucose">Глюкоза</label>
                     <input type="number" id="glucose" name="glucose" min="1.0" max="25.0" step="any" required> 
-                    <input type="submit" value="Внести данные">
+                    <input type="submit" name="submit" value="Внести данные">
                 </div>
         </fieldset>
         </div>
@@ -99,6 +109,12 @@
             document.getElementById('IMT').value = res;
         }
     </script>
-<script src="../../logic/search.js"></script>
+    <script src="../../logic/search.js"></script>
+    <?php 
+        if(!isset($_GET["id"])) {
+            $str = 'document.getElementById("res_form").style.display="none";';
+            echo "<script> ".$str." </script>";
+        }
+    ?>
 </body>
 </html>

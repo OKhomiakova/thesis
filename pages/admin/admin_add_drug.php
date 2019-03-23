@@ -1,5 +1,6 @@
 <?php
     include ("../../logic/check_admin.php");
+    include ("./add_data_drug.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -38,7 +39,7 @@
             </li>
         </ul>  
     </nav>
-    <form name="add_drug" action="./add_data_drug.php" method="POST">
+    <form name="add_drug" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
             <legend><h2 style="margin: 0;">Новый препарат</h2></legend>

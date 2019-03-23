@@ -7,5 +7,5 @@
 6. Add patient passport page
 7. Add user addition logic
 8. [DONE] Fix logout popup menu
-9. Fix forms actions
-10. Fix add report and add therapy forms
+9. [DONE] Fix forms actions
+10. [DONE] Fix add report and add therapy forms

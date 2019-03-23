@@ -1,5 +1,6 @@
 <?php
     include ("../../logic/check_admin.php");
+    include ("./add_data_user.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -38,7 +39,7 @@
             </li>
         </ul>  
     </nav>
-    <form name="add_user" action="./add_data_user.php" method="POST">
+    <form name="add_user" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
             <legend><h2 style="margin: 0;">Новый пользователь</h2></legend>

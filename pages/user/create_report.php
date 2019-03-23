@@ -1,5 +1,6 @@
 <?php
     include ("../../logic/check_user.php");
+    // include ("../../logic/create_data_report.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -34,7 +35,7 @@
                 </li>
         </ul>  
     </nav>
-    <form action="../../logic/create_data_report.php" method="POST" name="create_report">
+    <form method="POST" id="report_form" name="create_report">
     <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%; display: grid;'>
             <legend><h2>Сформировать отчет</h2></legend>
@@ -100,6 +101,7 @@
                 <input type="submit" value="Создать">
         </fieldset>
     </div>
+    </form>
     <?php include '../footer.php';?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='../../logic/search.js'></script>
