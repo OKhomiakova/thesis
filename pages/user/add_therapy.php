@@ -50,7 +50,6 @@
             ?>
         </fieldset>
     </div>
-    <
     <form method="POST" id="therapy_form" name="add_therapy">
         <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>

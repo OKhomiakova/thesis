@@ -1,6 +1,7 @@
 <?php
-    include ("../../logic/check_user.php");
-    // include ("../../logic/create_data_report.php");
+    // include ("../../logic/check_user.php");
+    include ("../../logic/create_data_report.php");
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -35,75 +36,28 @@
                 </li>
         </ul>  
     </nav>
-    <form method="POST" id="report_form" name="create_report">
     <div style='display: grid; justify-items:center;'>
-        <fieldset style='width: 80%; display: grid;'>
-            <legend><h2>Сформировать отчет</h2></legend>
+        <fieldset style='width: 80%;'>
+            <legend><h2>Выбор пациента</h2></legend>
             <?php 
-                if(!isset($_GET["id"])) {
-                    $output = "";
-                    $output .= '
-                    <div class="form-group">
-                        <div class="input-group" style="display:flex; justify-content: center;">
-                            <input type="text" name="search_text" id="search_text" placeholder="Введите фамилию пациента.." class="form-control" autofocus>
-                        </div>
-                    </div>
-                    <div id="result"></div>';
-                    echo $output;
-                } else {
-                    $id = $_GET["id"];
-                    $host = "localhost";
-                    $user = "root";
-                    $password = "";
-                    $db  = "dbHospital";
-                    
-                    $link = mysqli_connect($host, $user, $password, $db);
-                    mysqli_query($link, "set names cp1251");
-                    mysqli_set_charset($link, "utf8");
-                   
-                    $output = '';
-                    $sql = "SELECT * FROM tblPatient WHERE intPatientId=".$id."";
-                    $result = mysqli_query($link, $sql);
-            
-                    $p_height = 0;
-                    if(mysqli_num_rows($result)>0){
-                        $output .= '<div class="table-responsive">
-                                        <table class="table bordered"
-                                            <tr>
-                                                <th>Номер ИБ</th>
-                                                <th>ФИО пациента</th>
-                                                <th>Пол</th>
-                                                <th>Дата рождения</th>
-                                                <th>Группа СГХС</th>
-                                            </tr>';
-                        while($row = mysqli_fetch_array($result)){
-                            $p_height = $row["intHeight"];
-                            $output .= '
-                                <tr>
-                                    <td>'.$row["intDiseaseHistoryNumber"].'</td>
-                                    <td>'.$row["txtPatientFullName"].'</a></td>
-                                    <td>'.$row["txtPatientGender"].'</td>
-                                    <td>'.$row["datBirthday"].'</td>
-                                    <td>'.$row["txtSGHSGroup"].'</td>
-                                </tr>';
-                        }
-                    }
-                    $output .= '</table>';
-                    
-                    $output .= '<input id="height" name="height" type="hidden" value="';
-                    $output .= $p_height;
-                    $output .= '"/>';
-                    $output .= '</div>';
-                    echo $output;
-                }
-                ?>
-                <input id="file_to_redirect" type="hidden" value="create_report.php"/>
-                <input type="submit" value="Создать">
+                include '../../logic/patient_select_table.php';
+            ?>
         </fieldset>
     </div>
+    <form method="POST" id="report_form" name="create_report">
+        <div style='display: grid; justify-items:center;'>
+            <input type="submit" name="submit" value="Сформировать отчет">
+            <input id="file_to_redirect" type="hidden" value="create_report.php"/>
+        </div>
     </form>
     <?php include '../footer.php';?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='../../logic/search.js'></script>
+    <?php 
+        if(!isset($_GET["id"])) {
+            $str = 'document.getElementById("report_form").style.display="none";';
+            echo "<script> ".$str." </script>";
+        }
+    ?>
 </body>
 </head>
