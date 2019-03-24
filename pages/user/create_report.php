@@ -44,7 +44,7 @@
             ?>
         </fieldset>
     </div>
-    <form method="POST" id="report_form" name="create_report">
+    <form method="POST" id="report_form" name="create_report" style="display:none">
         <div style='display: grid; justify-items:center;'>
             <input type="submit" name="submit" value="Сформировать отчет">
             <input id="file_to_redirect" type="hidden" value="create_report.php"/>
@@ -54,8 +54,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='../../logic/search.js'></script>
     <?php 
-        if(!isset($_GET["id"])) {
-            $str = 'document.getElementById("report_form").style.display="none";';
+        if(isset($_GET["id"])) {
+            $str = 'document.getElementById("report_form").style.display="block";';
             echo "<script> ".$str." </script>";
         }
     ?>

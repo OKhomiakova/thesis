@@ -50,7 +50,7 @@
             ?>
         </fieldset>
     </div>
-    <form method="POST" id="therapy_form" name="add_therapy">
+    <form method="POST" id="therapy_form" name="add_therapy" style="display:none">
         <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
             <legend><h2>Назначение терапии</h2></legend>
@@ -90,8 +90,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../../logic/search.js"></script>
     <?php 
-        if(!isset($_GET["id"])) {
-            $str = 'document.getElementById("therapy_form").style.display="none";';
+        if(isset($_GET["id"])) {
+            $str = 'document.getElementById("therapy_form").style.display="block";';
             echo "<script> ".$str." </script>";
         }
     ?>

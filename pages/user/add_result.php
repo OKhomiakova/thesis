@@ -50,7 +50,7 @@
             }
         ?>
     </div>
-    <form method="POST" id="res_form" name="add_result">
+    <form method="POST" id="res_form" name="add_result" style="display:none">
     <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
             <legend><h2>Данные исследования</h2></legend>
@@ -111,8 +111,8 @@
     </script>
     <script src="../../logic/search.js"></script>
     <?php 
-        if(!isset($_GET["id"])) {
-            $str = 'document.getElementById("res_form").style.display="none";';
+        if(isset($_GET["id"])) {
+            $str = 'document.getElementById("res_form").style.display="block";';
             echo "<script> ".$str." </script>";
         }
     ?>
