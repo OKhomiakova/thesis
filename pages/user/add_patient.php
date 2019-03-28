@@ -35,8 +35,9 @@
                 </li>
         </ul>  
     </nav>
-    <?php if(isset($message)) echo $message . "<br>"; ?>
-
+    <div style='display: grid; justify-items:center;'>
+        <?php if(isset($message)) echo $message . "<br>"; ?>
+    </div>
     <form name="add_patient" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
