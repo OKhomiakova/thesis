@@ -43,10 +43,10 @@
         '$new_txtSGHSGroup', $new_intPatientAge, '$new_datBirthday', '$new_txtMutation', '$new_txtIBS', $new_intOIM, '$new_txtAG','$new_txtSmoking', '$new_txtNutritionSatus','$new_txtOperation', '$new_txtTherapyOK', $new_intHeight)";
 
         if (mysqli_query($link, $insertIntoTblPatient) === TRUE) {
-            $message = "Новый пациент успешно добавлен!";
+            $message = "<p style='color:green'> Новый пациент успешно добавлен в базу данных! </p>";
         }
     	else {
-            printf("<p>Error occured: %s </p>", mysqli_error($link));
+            $message = "<p style='color:red'> Произошла ошибка. Свяжитесь с администратором... </p>";
             exit;		
     	}
     }	
