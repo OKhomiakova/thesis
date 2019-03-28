@@ -9,3 +9,4 @@
 8. [DONE] Fix logout popup menu
 9. [DONE] Fix forms actions
 10. [DONE] Fix add report and add therapy forms
+11. Add drug names in DB
