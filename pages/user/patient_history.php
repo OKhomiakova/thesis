@@ -55,7 +55,7 @@
         $row1 = mysqli_fetch_array($result2);
         $sql3 = "SELECT * FROM tblTherapy WHERE intPatientId=".$id."";
         $result3 = mysqli_query($link, $sql3);
-        $row2 = mysqli_fetch_array($result);
+        $row2 = mysqli_fetch_array($result3);
         printf("<form action='./edit.php' method='POST' name='edit_data'>
         <h1>Пациент %s</h1>
         <div style='display: flex; justify-content:center;'>
@@ -74,7 +74,7 @@
         do {
         printf("<table border='1'><tr><td><b>Дата назначения терапии:</b></td><td>%s</td></tr>
         <tr><td><b>Препарат:</b></td><td>%s</td></tr>
-        <tr><td><b>Доза:</b></td><td>%s</td></tr><tr><td><b>Переносимость:</b></td><td>%s</td></tr>",$row2['datPrescription'],$row2['txtDrugName'],$row2['txtDrugDose'],$row2['txtTolerance']);	
+        <tr><td><b>Доза:</b></td><td>%s</td></tr><tr><td><b>Переносимость:</b></td><td>%s</td></tr></table></br>",$row2['datPrescription'],$row2['txtDrugName'],$row2['txtDrugDose'],$row2['txtTolerance']);	
         }
         while($row2 = mysqli_fetch_array($result3));
     ?>
