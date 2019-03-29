@@ -1,6 +1,5 @@
 <?php
     include ("../../logic/check_user.php");
-    include("../../logic/add_data_patient.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -27,7 +26,7 @@
             <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
-                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name']?></a>
+                    <a class="dropbtn" href="javascript:void(0)">Username</a>
                     <div class="dropdown-content">
                         <a href="../change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
                         <a href="../../logic/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
@@ -35,10 +34,7 @@
                 </li>
         </ul>  
     </nav>
-    <div style='display: grid; justify-items:center;'>
-        <?php if(isset($message)) echo $message . "<br>"; ?>
-    </div>
-    <form name="add_patient" method="POST">
+    <form name="add_patient" action="../../logic/add_data_patient.php" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
             <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
@@ -54,7 +50,7 @@
 
                     <div style="display:flex;">
                         <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                            <label for="patientDateOfBirth">Дата рождения</label>
+                            <label for="patientDateOfBirth" style="position: relative;">Дата рождения</label>
                             <input type="date" id="patientDateOfBirth" name="bithDay" required>
                         </div>
                         <div style="display:grid; flex: 40%; margin-left: 10px;">
@@ -124,7 +120,7 @@
                         <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
                     </div>
                     
-                    <input type="submit" name="submit" value="Внести данные">
+                    <input type="submit" value="Внести данные">
                 </div>
         </fieldset>
         </div>

@@ -26,7 +26,7 @@
             <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
-                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name']?></a>
+                    <a class="dropbtn" href="javascript:void(0)">Username</a>
                     <div class="dropdown-content">
                         <a href="../change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
                         <a href="../../logic/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
@@ -53,6 +53,9 @@
         $sql2 = "SELECT * FROM tblAnalysis WHERE intPatientId=".$id."";
         $result2 = mysqli_query($link, $sql2);
         $row1 = mysqli_fetch_array($result2);
+        $sql3 = "SELECT * FROM tblTherapy WHERE intPatientId=".$id."";
+        $result3 = mysqli_query($link, $sql3);
+        $row2 = mysqli_fetch_array($result);
         printf("<form action='./edit.php' method='POST' name='edit_data'>
         <h1>Пациент %s</h1>
         <div style='display: flex; justify-content:center;'>
@@ -61,16 +64,21 @@
                 <div class='passport'>
         <label for='dateInput'>Дата ввода данных</label></br>
         <input type='date' id='dateInput' name='dateInput' value='%s'></br></div></fieldset></div></form>",$row['txtPatientFullName'],$row['datInput']);
-        do{
+        do {
         printf("<table border='1'><tr><td><b>Дата исследования:</b></td><td>%s</td></tr>
         <tr><td><b>Вес:</b></td><td>%s</td></tr>
         <tr><td><b>ИМТ (м<sup>2</sup>/кг):</b></td><td>%s</td></tr><tr><td><b>ОХС:</b></td><td>%s</td></tr><tr><td><b>ЛПНП:</b></td><td>%s</td></tr><tr><td><b>ЛПВП:</b></td><td>%s</td></tr><tr><td><b>ТГ:</b></td><td>%s</td></tr><tr><td><b>ЛП(а):</b></td><td>%s</td></tr><tr><td><b>АСТ:</b></td><td>%s</td></tr><tr><td><b>АЛТ:</b></td><td>%s</td></tr><tr><td><b>Билирубин:</b></td><td>%s</td></tr>
         <tr><td><b>Глюкоза:</b></td><td>%s</td></tr>
-        </table><br>",$row1['datAnalysis'],$row1['decWeight'],$row1['decIMT'],$row1['decOHS'],$row1['decLPNP'],$row1['decLPVP'],$row1['decTG'],$row1['decLPa'],$row1['decAST'],$row1['decALT'],$row1['decBilirubin'],$row1['decGlucose']);	
+        </table><br>",$row1['datAnalysis'],$row1['decWeight'],$row1['decIMT'],$row1['decOHS'],$row1['decLPNP'],$row1['decLPVP'],$row1['decTG'],$row1['decLPa'],$row1['decAST'],$row1['decALT'],$row1['decBilirubin'],$row1['decGlucose']);}
+        while($row1 = mysqli_fetch_array($result2));
+        do {
+        printf("<table border='1'><tr><td><b>Дата назначения терапии:</b></td><td>%s</td></tr>
+        <tr><td><b>Препарат:</b></td><td>%s</td></tr>
+        <tr><td><b>Доза:</b></td><td>%s</td></tr><tr><td><b>Переносимость:</b></td><td>%s</td></tr>",$row2['datPrescription'],$row2['txtDrugName'],$row2['txtDrugDose'],$row2['txtTolerance']);	
         }
-        while($row1 = mysqli_fetch_array($result2))
-        ?>
-        <a href="search.php">Вернуться к поиску</a>
+        while($row2 = mysqli_fetch_array($result3));
+    ?>
+        <a href="patient_search.php">Вернуться к поиску</a>
     <?php include '../footer.php';?>
 </body>
 </html>

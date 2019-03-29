@@ -63,7 +63,7 @@
                 <label for="drug">Препарат</label>
                 <select name="drug" id="drug" required>
                     <option value="" selected disabled>Please select an option...</option>
-                    <option value="drug2" selected>drug1</option>
+                    <option value="drug1" selected>drug1</option>
                     <option value="drug2">drug2</option>
                 </select>
                 <label for="dosage">Доза</label>
