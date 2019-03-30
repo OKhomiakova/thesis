@@ -26,7 +26,7 @@
             <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
-                    <a class="dropbtn" href="javascript:void(0)">Username</a>
+                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name']?></a></a>
                     <div class="dropdown-content">
                         <a href="../change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
                         <a href="../../logic/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
@@ -50,7 +50,7 @@
 
                     <div style="display:flex;">
                         <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                            <label for="patientDateOfBirth" style="position: relative;">Дата рождения</label>
+                            <label for="patientDateOfBirth">Дата рождения</label>
                             <input type="date" id="patientDateOfBirth" name="bithDay" required>
                         </div>
                         <div style="display:grid; flex: 40%; margin-left: 10px;">
@@ -73,23 +73,33 @@
                         <option value="Вероятная">Вероятная</option>
                     </select>
 
-                    <label for="IBS">ИБС</label>
-                    <div class="align">
-                        <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
-                        <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
+                    <div style="display:flex;">
+                        <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                        <fieldset style='width: 93%' >
+                        <legend><label for="IBS">ИБС</label></legend>
+                            <div class="align">
+                                <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
+                                <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
+                            </div>
+                        </fieldset>
+                        </div>
+                        <div style="display:grid; flex: 40%; margin-left: 10px;">
+                        <fieldset style='width: 93%' >
+                        <legend><label for="AG">АГ</label></legend>
+                            <div class="align">
+                                <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
+                                <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
+                            </div>
+                        </fieldset>
+                        </div>
                     </div>
+                  
 
                     <label for="OIM">ОИМ в анамнезе</label>
                     <input type="number" id="OIM" name="oim" min="0" required>
 
                     <label for="operationNum">Операция в анамнезе</label>
                     <input type="number" id="operationNum" name="operationNum" min="0">
-
-                    <label for="AG">АГ</label>
-                    <div class="align">
-                        <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
-                        <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
-                    </div>
                     
                     <label for="nutStatus">Нутритивный статус</label>
                     <select name="nutStatus" id="nutStatus" required>
@@ -99,27 +109,39 @@
                             <option value="Выраженное ожирение">Выраженное ожирение</option>
                     </select>
                     
-                    <label for="mutation">Мутации</label>
-                    <div class="align">
-                        <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
-                        <p><input type="radio" id="mutation" name="mutation" value="Нет" selected>Нет</p>
-                    </div>
-                    
                     <label for="height">Рост</label>
                     <input type="number" id="height" name="height" min="100" max="250" required>
                     
-                    <label for="therapyOk">Привержен терапии</label>
-                    <div class="align">
-                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>
-                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
+                    <div style="display:flex;">
+                        <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                        <fieldset style='width: 90%' >
+                            <legend><label for="mutation">Мутации</label></legend>
+                            <div class="align">
+                                <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
+                                <p><input type="radio" id="mutation" name="mutation" value="Нет" selected>Нет</p>
+                            </div>
+                        </fieldset>
+                        </div>
+                        <div style="display:grid; flex: 40%; margin-left: 10px; margin-right: 10px;">
+                        <fieldset style='width: 90%' >
+                            <legend><label for="therapyOk">Привержен терапии</label></legend>
+                            <div class="align">
+                                <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>
+                                <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
+                            </div>
+                        </fieldset>
+                        </div>
+                        <div style="display:grid; flex: 40%; margin-left: 10px; ">
+                        <fieldset style='width: 90%' >
+                            <legend> <label for="smoking">Курение</label></legend>
+                            <div class="align">
+                                <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
+                                <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
+                            </div>
+                        </fieldset>
+                        </div>
                     </div> 
-                   
-                    <label for="smoking">Курение</label>
-                    <div class="align">
-                        <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
-                        <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
-                    </div>
-                    
+                
                     <input type="submit" value="Внести данные">
                 </div>
         </fieldset>

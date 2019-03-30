@@ -63,7 +63,7 @@
                         <p><input type="radio" id="isAdmin" name="isAdmin" value="yes" checked>Да</p>
                         <p><input type="radio" id="isAdmin" name="isAdmin" value="no">Нет</p>
                     </div> 
-                    <input type="submit" name="submit" value="Создать">
+                    <input type="submit" name="submit" value="Добавить пользователя">
                 </div>
         </fieldset>
         </div>

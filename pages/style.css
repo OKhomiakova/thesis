@@ -18,6 +18,12 @@ header {
     text-align: center;
 }
 
+header a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
 img{
     height: 100px;
     width: auto;
@@ -99,7 +105,7 @@ li.dropdown {
 }
 
 footer {
-    margin-top: 15px;
+    margin-top: 35px;
     text-align: center;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
@@ -211,6 +217,10 @@ tr:nth-child(even) {
 
 fieldset {
     width: 80%;
+}
+
+fieldset div fieldset {
+    border: 1px solid #CCCCCC;
 }
 
 .login-form {

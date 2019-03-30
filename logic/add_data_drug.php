@@ -17,11 +17,9 @@
         exit;               
     }
 
-    $login = $_POST['login'];
-    $pass = $_POST['password'];
-    $name = $_POST['userName'];
-    $admin = $_POST['isAdmin'];
-    if($all = mysqli_query($link, "SELECT * FROM tblUser")) {
+    $drugName = $_POST['drugName'];
+    
+    if($all = mysqli_query($link, "SELECT * FROM tblDrug")) {
         $id = mysqli_num_rows($all);
     }
     else {
@@ -29,12 +27,12 @@
         exit;               
     }
 
-    $str = "INSERT INTO tblUser values ('$id', '$login', '$name', '$pass', '$admin')";
+    $str = 'INSERT INTO tblDrug values ($id, $drugName);
     if (mysqli_query($link, $str) === TRUE) {
-        $message = "<p style='color:green'> Пользователь $name успешно добавлен! </p>";
+        $message = "<p style='color:green'> Препарат $drugName успешно добавлен! </p>";
     }
     else {
-        $message = "<p style='color:red'> Произошла ошибка. Свяжитесь с администратором... </p>";
+        $message = "<p style='color:red'> Произошла ошибка. </p>";
         exit;               
     }
 ?>
