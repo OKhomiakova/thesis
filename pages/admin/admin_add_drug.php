@@ -1,6 +1,6 @@
 <?php
     include ("../../logic/check_admin.php");
-    include ("./add_data_drug.php");
+    include ("../../logic/add_data_drug.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -48,7 +48,7 @@
                     <label for="drugName">Название препарата</label>
                     <input type="text" id="drugName" name="drugName" maxlength="100" required>
                     
-                    <input type="submit" value="Создать">
+                    <input type="submit" name="submit" value="Добавить препарат">
                 </div>
         </fieldset>
         </div>
