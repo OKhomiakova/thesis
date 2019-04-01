@@ -1,7 +1,12 @@
 
 <?php
+<<<<<<< HEAD
         include("../../logic/check_user.php");
         include("../../logic/add_data_patient.php");
+=======
+    include ("../../logic/check_user.php");
+    include("../../logic/add_data_patient.php");
+>>>>>>> d65cc14a47057639953997d8ff4e5bc69a32b753
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -78,6 +83,7 @@
                         <option value="Вероятная">Вероятная</option>
                     </select>
 
+<<<<<<< HEAD
                     <div style="display:flex;">
                         <div style="display:grid; flex: 40%; margin-right: 10px;" >
                         <fieldset style='width: 93%' >
@@ -97,14 +103,25 @@
                             </div>
                         </fieldset>
                         </div>
+=======
+                    <label for="IBS">ИБС</label>
+                    <div class="align">
+                        <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
+                        <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
+>>>>>>> d65cc14a47057639953997d8ff4e5bc69a32b753
                     </div>
-                  
 
                     <label for="OIM">ОИМ в анамнезе</label>
                     <input type="number" id="OIM" name="oim" min="0" required>
 
                     <label for="operationNum">Операция в анамнезе</label>
                     <input type="number" id="operationNum" name="operationNum" min="0">
+
+                    <label for="AG">АГ</label>
+                    <div class="align">
+                        <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
+                        <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
+                    </div>
                     
                     <label for="nutStatus">Нутритивный статус</label>
                     <select name="nutStatus" id="nutStatus" required>
@@ -114,9 +131,16 @@
                             <option value="Выраженное ожирение">Выраженное ожирение</option>
                     </select>
                     
+                    <label for="mutation">Мутации</label>
+                    <div class="align">
+                        <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
+                        <p><input type="radio" id="mutation" name="mutation" value="Нет" selected>Нет</p>
+                    </div>
+                    
                     <label for="height">Рост</label>
                     <input type="number" id="height" name="height" min="100" max="250" required>
                     
+<<<<<<< HEAD
                     <div style="display:flex;">
                         <div style="display:grid; flex: 40%; margin-right: 10px;" >
                         <fieldset style='width: 90%' >
@@ -148,6 +172,21 @@
                     </div> 
                 
                     <input type="submit"  name="submit" value="Внести данные">
+=======
+                    <label for="therapyOk">Привержен терапии</label>
+                    <div class="align">
+                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>
+                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
+                    </div> 
+                   
+                    <label for="smoking">Курение</label>
+                    <div class="align">
+                        <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
+                        <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
+                    </div>
+                    
+                    <input type="submit" name="submit" value="Внести данные">
+>>>>>>> d65cc14a47057639953997d8ff4e5bc69a32b753
                 </div>
         </fieldset>
         </div>
@@ -169,4 +208,7 @@
     </script>
 </body>
 </html>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d65cc14a47057639953997d8ff4e5bc69a32b753
