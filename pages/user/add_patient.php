@@ -26,7 +26,7 @@
             <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
-                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name']?></a></a>
+                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name']?></a>
                     <div class="dropdown-content">
                         <a href="../change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
                         <a href="../../logic/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
@@ -78,7 +78,9 @@
                         <fieldset style='width: 93%' >
                         <legend><label for="IBS">ИБС</label></legend>
                             <div class="align">
-                                <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
+                                <p> 
+                                        <input type="radio" id="IBS" name="ibs" value="Есть" />Есть
+                                </p>
                                 <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
                             </div>
                         </fieldset>
@@ -147,6 +149,7 @@
         </fieldset>
         </div>
     </form>
+
     <?php include '../footer.php';?>
     <script>
 

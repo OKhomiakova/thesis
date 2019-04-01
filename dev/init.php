@@ -45,8 +45,8 @@ $createTblPatient = "CREATE TABLE tblPatient (
     datInput date NOT NULL,
     intDiseaseHistoryNumber integer NOT NULL,
     txtPatientFullName varchar(100) NOT NULL,
-    txtPatientGender varchar(10) NOT NULL,
-    txtSGHSGroup varchar(100) NOT NULL, 
+    txtPatientGender varchar(7) NOT NULL,
+    txtSGHSGroup varchar(12) NOT NULL, 
     intPatientAge integer(3) NOT NULL, 
     datBirthday date NOT NULL,
     txtMutation varchar(4) NOT NULL,
@@ -54,9 +54,9 @@ $createTblPatient = "CREATE TABLE tblPatient (
     intOIM integer(10) NOT NULL,
     txtAG varchar(4) NOT NULL,
     txtSmoking varchar(3) NOT NULL,
-    txtNutritionSatus varchar(20) NOT NULL,
-    txtOperation varchar(10) NOT NULL,
-    txtTherapyOK varchar(4) NOT NULL,
+    txtNutritionStatus varchar(20) NOT NULL,
+    intOperation integer(10) NOT NULL,
+    txtTherapyOK varchar(3) NOT NULL,
     intHeight integer(3) NOT NULL
     )";	
 
@@ -96,7 +96,7 @@ $createTblUser = "CREATE TABLE tblUser (
     txtUserLogin varchar(100) NOT NULL,
     txtUserFullName varchar(100) NOT NULL,
     txtUserPassword varchar(100) NOT NULL,
-    txtIsAdmin varchar(100) NOT NULL
+    txtIsAdmin varchar(3) NOT NULL
     )"; 
 
 /* Создание таблицы не возвращает результирующего набора */
