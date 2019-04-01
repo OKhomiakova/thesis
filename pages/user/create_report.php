@@ -48,6 +48,12 @@
         <div style='display: grid; justify-items:center;'>
             <input type="submit" name="submit" value="Сформировать отчет">
             <input id="file_to_redirect" type="hidden" value="create_report.php"/>
+            <input id="tmp" name="user_id" type="hidden" 
+            <?php
+                if(isset($_GET['id']))
+                    echo "value=\"" . $_GET['id'] . "\"";
+            ?>
+            />
         </div>
     </form>
     <?php include '../footer.php';?>

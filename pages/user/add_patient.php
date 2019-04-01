@@ -1,5 +1,7 @@
+
 <?php
-    include ("../../logic/check_user.php");
+        include("../../logic/check_user.php");
+        include("../../logic/add_data_patient.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -26,7 +28,7 @@
             <li><a href="add_therapy.php">Назначение терапии</a></li>
             <li><a href="create_report.php">Создать отчет</a></li>
             <li class="dropdown" style="float: right;"> 
-                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name']?></a>
+                    <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION['user_name']?></a></a>
                     <div class="dropdown-content">
                         <a href="../change_password.php"><i class="fas fa-key"></i>&nbsp;Сменить пароль</a>
                         <a href="../../logic/logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Выйти</a>
@@ -34,7 +36,10 @@
                 </li>
         </ul>  
     </nav>
-    <form name="add_patient" action="../../logic/add_data_patient.php" method="POST">
+    <div style='display: grid; justify-items:center;'>
+        <?php if(isset($message)) echo $message . "<br>"; ?>
+    </div>
+    <form name="add_patient" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >
             <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
@@ -78,9 +83,7 @@
                         <fieldset style='width: 93%' >
                         <legend><label for="IBS">ИБС</label></legend>
                             <div class="align">
-                                <p> 
-                                        <input type="radio" id="IBS" name="ibs" value="Есть" />Есть
-                                </p>
+                                <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
                                 <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
                             </div>
                         </fieldset>
@@ -120,7 +123,7 @@
                             <legend><label for="mutation">Мутации</label></legend>
                             <div class="align">
                                 <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
-                                <p><input type="radio" id="mutation" name="mutation" value="Нет" selected>Нет</p>
+                                <p><input type="radio" id="mutation" name="mutation" value="Нет" checked>Нет</p>
                             </div>
                         </fieldset>
                         </div>
@@ -144,19 +147,15 @@
                         </div>
                     </div> 
                 
-                    <input type="submit" value="Внести данные">
+                    <input type="submit"  name="submit" value="Внести данные">
                 </div>
         </fieldset>
         </div>
     </form>
-
     <?php include '../footer.php';?>
     <script>
-
         let form = document.forms.add_patient;
-
         form.bithDay.onchange = calculate;
-
         function calculate() {
             let bday = document.getElementById('patientDateOfBirth').value;
             var today = new Date();
@@ -170,3 +169,4 @@
     </script>
 </body>
 </html>
+
