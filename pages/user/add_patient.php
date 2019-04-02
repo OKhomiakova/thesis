@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Новый пациент</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
 </head>
 <body>
     <?php include '../header.php';?>
@@ -38,119 +38,121 @@
     <div style='display: grid; justify-items:center;'>
         <?php if(isset($message)) echo $message . "<br>"; ?>
     </div>
-    <form name="add_patient" method="POST">
-    <div style='display: flex; justify-content:center;'>
-        <fieldset style='width: 80%;' >
-            <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
-                <div class="passport">
-                    <label for="dateInput">Дата ввода данных</label>
-                    <input type="date" id="dateInput" name="dateInput" required>
+    <main class="fancy">
+        <form name="add_patient" method="POST">
+            <div style='display: flex; justify-content:center;'>
+                <fieldset style='width: 80%;' >
+                    <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
+                        <div class="passport">
+                            <label for="dateInput">Дата ввода данных</label>
+                            <input type="date" id="dateInput" name="dateInput" required>
 
-                    <label for="patientCard">Номер Истории Болезни</label>
-                    <input type="number" id="patientCard" name="card" min="0"  required>
+                            <label for="patientCard">Номер Истории Болезни</label>
+                            <input type="number" id="patientCard" name="card" min="0"  required>
 
-                    <label for="patientName">ФИО Пациента</label>
-                    <input type="text" id="patientName" name="patientName" maxlength="100" required>
+                            <label for="patientName">ФИО Пациента</label>
+                            <input type="text" id="patientName" name="patientName" maxlength="100" required>
 
-                    <div style="display:flex;">
-                        <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                            <label for="patientDateOfBirth">Дата рождения</label>
-                            <input type="date" id="patientDateOfBirth" name="bithDay" required>
-                        </div>
-                        <div style="display:grid; flex: 40%; margin-left: 10px;">
-                            <label for="patientAge">Возраст</label>
-                            <input type="number" id="patientAge" name="age" min="0" required>
-                        </div>
-                    </div>
-
-                    <label for="patientGender">Пол</label>
-                    <select name="gender" id="patientGender" required>
-                        <option value="" selected disabled>Please select an option...</option>
-                        <option value="Мужской" selected>Мужской</option>
-                        <option value="Женский">Женский</option>
-                    </select>
-
-                    <label for="SGHSGroup">Группа СГХС</label>
-                    <select name="SGHSGroup" id="SGHSGroup" required>
-                        <option value="Определенная" selected>Определенная</option>
-                        <option value="Возможная">Возможная</option>
-                        <option value="Вероятная">Вероятная</option>
-                    </select>
-
-                    <div style="display:flex;">
-                        <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                        <fieldset style='width: 93%' >
-                        <legend><label for="IBS">ИБС</label></legend>
-                            <div class="align">
-                                <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
-                                <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
+                            <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                                    <label for="patientDateOfBirth">Дата рождения</label>
+                                    <input type="date" id="patientDateOfBirth" name="bithDay" required>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px;">
+                                    <label for="patientAge">Возраст</label>
+                                    <input type="number" id="patientAge" name="age" min="0" required>
+                                </div>
                             </div>
-                        </fieldset>
-                        </div>
-                        <div style="display:grid; flex: 40%; margin-left: 10px;">
-                        <fieldset style='width: 93%' >
-                        <legend><label for="AG">АГ</label></legend>
-                            <div class="align">
-                                <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
-                                <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
-                            </div>
-                        </fieldset>
-                        </div>
-                    </div>
-                  
 
-                    <label for="OIM">ОИМ в анамнезе</label>
-                    <input type="number" id="OIM" name="oim" min="0" required>
+                            <label for="patientGender">Пол</label>
+                            <select name="gender" id="patientGender" required>
+                                <option value="" selected disabled>Please select an option...</option>
+                                <option value="Мужской" selected>Мужской</option>
+                                <option value="Женский">Женский</option>
+                            </select>
 
-                    <label for="operationNum">Операция в анамнезе</label>
-                    <input type="number" id="operationNum" name="operationNum" min="0">
-                    
-                    <label for="nutStatus">Нутритивный статус</label>
-                    <select name="nutStatus" id="nutStatus" required>
-                            <option value="Гипотрофия">Гипотрофия</option>
-                            <option value="Норма" selected>Норма</option>
-                            <option value="Ожирение">Ожирение</option>
-                            <option value="Выраженное ожирение">Выраженное ожирение</option>
-                    </select>
-                    
-                    <label for="height">Рост</label>
-                    <input type="number" id="height" name="height" min="100" max="250" required>
-                    
-                    <div style="display:flex;">
-                        <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                        <fieldset style='width: 90%' >
-                            <legend><label for="mutation">Мутации</label></legend>
-                            <div class="align">
-                                <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
-                                <p><input type="radio" id="mutation" name="mutation" value="Нет" checked>Нет</p>
+                            <label for="SGHSGroup">Группа СГХС</label>
+                            <select name="SGHSGroup" id="SGHSGroup" required>
+                                <option value="Определенная" selected>Определенная</option>
+                                <option value="Возможная">Возможная</option>
+                                <option value="Вероятная">Вероятная</option>
+                            </select>
+
+                            <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                                <fieldset style='width: 93%' >
+                                <legend><label for="IBS">ИБС</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
+                                        <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px;">
+                                <fieldset style='width: 93%' >
+                                <legend><label for="AG">АГ</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
+                                        <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
                             </div>
-                        </fieldset>
+                          
+
+                            <label for="OIM">ОИМ в анамнезе</label>
+                            <input type="number" id="OIM" name="oim" min="0" required>
+
+                            <label for="operationNum">Операция в анамнезе</label>
+                            <input type="number" id="operationNum" name="operationNum" min="0">
+                            
+                            <label for="nutStatus">Нутритивный статус</label>
+                            <select name="nutStatus" id="nutStatus" required>
+                                    <option value="Гипотрофия">Гипотрофия</option>
+                                    <option value="Норма" selected>Норма</option>
+                                    <option value="Ожирение">Ожирение</option>
+                                    <option value="Выраженное ожирение">Выраженное ожирение</option>
+                            </select>
+                            
+                            <label for="height">Рост</label>
+                            <input type="number" id="height" name="height" min="100" max="250" required>
+                            
+                            <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                                <fieldset style='width: 90%' >
+                                    <legend><label for="mutation">Мутации</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
+                                        <p><input type="radio" id="mutation" name="mutation" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px; margin-right: 10px;">
+                                <fieldset style='width: 90%' >
+                                    <legend><label for="therapyOk">Привержен терапии</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>
+                                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px; ">
+                                <fieldset style='width: 90%' >
+                                    <legend> <label for="smoking">Курение</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
+                                        <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                            </div> 
+                        
+                            <input type="submit" value="Внести данные">
                         </div>
-                        <div style="display:grid; flex: 40%; margin-left: 10px; margin-right: 10px;">
-                        <fieldset style='width: 90%' >
-                            <legend><label for="therapyOk">Привержен терапии</label></legend>
-                            <div class="align">
-                                <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>
-                                <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
-                            </div>
-                        </fieldset>
-                        </div>
-                        <div style="display:grid; flex: 40%; margin-left: 10px; ">
-                        <fieldset style='width: 90%' >
-                            <legend> <label for="smoking">Курение</label></legend>
-                            <div class="align">
-                                <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
-                                <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
-                            </div>
-                        </fieldset>
-                        </div>
-                    </div> 
-                
-                    <input type="submit" value="Внести данные">
-                </div>
-        </fieldset>
-        </div>
-    </form>
+                </fieldset>
+            </div>
+        </form>
+    </main>
     <?php include '../footer.php';?>
     <script>
         let form = document.forms.add_patient;
