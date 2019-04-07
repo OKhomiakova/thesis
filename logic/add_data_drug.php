@@ -14,7 +14,7 @@
     
     if (mysqli_connect_errno()) {
         $message = "<p style='color:red'> Произошла ошибка. </p>";
-        exit;               
+        return;               
     }
 
     $drugName = $_POST['drugName'];
@@ -24,15 +24,15 @@
     }
     else {
         $message = "<p style='color:red'> Произошла ошибка. </p>";
-        exit;               
+        return;               
     }
 
-    $str = 'INSERT INTO tblDrug values ($id, $drugName);
+    $str = 'INSERT INTO tblDrug values (' . $id . ', \'' . $drugName . '\')';
     if (mysqli_query($link, $str) === TRUE) {
         $message = "<p style='color:green'> Препарат $drugName успешно добавлен! </p>";
     }
     else {
         $message = "<p style='color:red'> Произошла ошибка. </p>";
-        exit;               
+        return;               
     }
 ?>

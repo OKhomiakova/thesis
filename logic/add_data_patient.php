@@ -8,7 +8,7 @@
         $link = mysqli_connect($host, $user, $password, $db);
         
         if (mysqli_connect_errno()) {
-            printf("Не удалось подключиться: %s\n", mysqli_connect_error());
+            $message = "<p style=\"color:red;\" >Произошла ошибка... </p>";
             return;
         }
         mysqli_query($link, "SET NAMES utf8");
@@ -16,7 +16,7 @@
             $new_id = mysqli_num_rows($all);
         }
         else {
-            printf("<p>Error occured: %s </p>", mysqli_error($all));
+            $message = "<p style=\"color:red;\" >Произошла ошибка... </p>";
             return;
         }
         $new_datInput = $_POST['dateInput'];
@@ -42,8 +42,7 @@
             $message = "<p style=\"color:green;\" >Новый пациент успешно добавлен! </p>";
         }
     	else {
-            printf("<p>Error occured: %s </p>", mysqli_error($link));
-            return;		
+            $message = "<p style=\"color:red;\" >Произлшда ошибка... </p>";		
     	}
     }	
 	

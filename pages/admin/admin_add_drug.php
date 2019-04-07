@@ -39,6 +39,13 @@
             </li>
         </ul>  
     </nav>
+    <div style='display: grid; justify-items:center;'>
+        <?php 
+            if(isset($message)) {
+                echo $message;
+            }
+        ?>
+    </div>
     <form name="add_drug" method="POST">
     <div style='display: flex; justify-content:center;'>
         <fieldset style='width: 80%;' >

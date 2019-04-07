@@ -1,6 +1,6 @@
 <?php
     include ("../../logic/check_user.php");
-    include("../../logic/add_data_patient.php");
+    include ("../../logic/add_data_patient.php");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -147,7 +147,7 @@
                                 </div>
                             </div> 
                         
-                            <input type="submit" value="Внести данные">
+                            <input type="submit" name="submit" value="Внести данные">
                         </div>
                 </fieldset>
             </div>

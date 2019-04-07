@@ -50,10 +50,6 @@
             ?>
         </fieldset>
     </div>
-    <?php 
-        if(isset($drugs))
-            var_dump($drugs);
-    ?>
     <form method="POST" id="therapy_form" name="add_therapy" style="display:none">
         <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>
@@ -69,6 +65,13 @@
                     <option value="" selected disabled>Please select an option...</option>
                     <option value="drug1" selected>drug1</option>
                     <option value="drug2">drug2</option>
+                    <?php 
+                        if(!isset($drugs)) return;
+                        echo PHP_EOL;
+                        foreach ($drugs as $drug_name) {
+                            echo '                    <option value="' . $drug_name . '">' .  $drug_name . '</option>' . PHP_EOL;
+                        }
+                    ?>
                 </select>
                 <label for="dosage">Доза</label>
                 <select name="dosage" id="dosage" required>
