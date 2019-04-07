@@ -50,6 +50,10 @@
             ?>
         </fieldset>
     </div>
+    <?php 
+        if(isset($drugs))
+            var_dump($drugs);
+    ?>
     <form method="POST" id="therapy_form" name="add_therapy" style="display:none">
         <div style='display: grid; justify-items:center;'>
         <fieldset style='width: 80%;'>

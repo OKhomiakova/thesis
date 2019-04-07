@@ -1,6 +1,4 @@
 <?php
-    if(!isset($_POST['submit'])) return;
-    
     $host = "localhost";
     $user = "root";
     $password = "";
@@ -14,6 +12,19 @@
     }
 
     mysqli_query($link, "SET NAMES utf8");
+
+    if(!isset($_POST['submit'])) {
+        if(!($result = mysqli_query($link, "SELECT * FROM tblDrug"))) {
+            $message = "<p style='color:red'> Произошла ошибка. Свяжитесь с администратором... </p>";
+            exit;
+        }
+
+        $drugs = array();        
+        while($row = mysqli_fetch_array($result)){
+               array_push($drugs, $row['txtDrugName']);
+        }
+        return;
+    }
 
     if($all = mysqli_query($link, "SELECT * FROM tblTherapy")) {
         $new_id = mysqli_num_rows($all);
