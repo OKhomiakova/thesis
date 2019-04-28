@@ -43,45 +43,63 @@
             <div style='display: flex; justify-content:center;'>
                 <fieldset style='width: 80%;' >
                     <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
+                    <span class="required_notification">* Обязательное поле</span>
                         <div class="passport">
-                            <label for="dateInput">Дата ввода данных</label>
-                            <input type="date" id="dateInput" name="dateInput" required>
+                        <div style="display:flex;">
+                                <div style="flex: 50%; margin-right: 10px;" >
+                                <label>Дата ввода данных *</label>
+                                <input type="date" id="dateInput" name="dateInput" required>    
+                                </div>
+                                <div style="display:grid; flex: 50%; margin-left: 10px;">
+                                <div>
+                                <label>№ Истории Болезни *</label>
+                                <input type="number" id="patientCard" name="card" min="0"  required>
+                                </div>
+                            </div>
+                        </div>
 
-                            <label for="patientCard">Номер Истории Болезни</label>
-                            <input type="number" id="patientCard" name="card" min="0"  required>
-
-                            <label for="patientName">ФИО Пациента</label>
-                            <input type="text" id="patientName" name="patientName" maxlength="100" required>
+                            <div>
+                            <label>ФИО Пациента *</label>
+                            <input type="text" id="patientName" name="patientName" maxlength="100" placeholder="Фамилия Имя Отчество" required>
+                            </div>
 
                             <div style="display:flex;">
                                 <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                                    <label for="patientDateOfBirth">Дата рождения</label>
+                                <div style="flex: 40%; margin-right: 10px;" >
+                                    <label>Дата рождения *</label>
                                     <input type="date" id="patientDateOfBirth" name="bithDay" required>
+                                    </div>
                                 </div>
                                 <div style="display:grid; flex: 40%; margin-left: 10px;">
-                                    <label for="patientAge">Возраст</label>
+                                <div>
+                                    <label>Возраст *</label>
                                     <input type="number" id="patientAge" name="age" min="0" required>
+                                    </div>
                                 </div>
                             </div>
 
-                            <label for="patientGender">Пол</label>
+                            <div>
+                            <label>Пол *</label>
                             <select name="gender" id="patientGender" required>
                                 <option value="" selected disabled>Please select an option...</option>
                                 <option value="Мужской" selected>Мужской</option>
                                 <option value="Женский">Женский</option>
                             </select>
+                            </div>
 
-                            <label for="SGHSGroup">Группа СГХС</label>
+                            <div>
+                            <label>Группа СГХС *</label>
                             <select name="SGHSGroup" id="SGHSGroup" required>
                                 <option value="Определенная" selected>Определенная</option>
                                 <option value="Возможная">Возможная</option>
                                 <option value="Вероятная">Вероятная</option>
                             </select>
+                            </div>
 
                             <div style="display:flex;">
                                 <div style="display:grid; flex: 40%; margin-right: 10px;" >
                                 <fieldset style='width: 93%' >
-                                <legend><label for="IBS">ИБС</label></legend>
+                                <legend><label for="IBS">ИБС *</label></legend>
                                     <div class="align">
                                         <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
                                         <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
@@ -90,7 +108,7 @@
                                 </div>
                                 <div style="display:grid; flex: 40%; margin-left: 10px;">
                                 <fieldset style='width: 93%' >
-                                <legend><label for="AG">АГ</label></legend>
+                                <legend><label for="AG">АГ *</label></legend>
                                     <div class="align">
                                         <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
                                         <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
@@ -98,29 +116,38 @@
                                 </fieldset>
                                 </div>
                             </div>
-                          
-
-                            <label for="OIM">ОИМ в анамнезе</label>
+                            <div>
+                            <label>ОИМ в анамнезе *</label>
                             <input type="number" id="OIM" name="oim" min="0" required>
+                            </div>
 
-                            <label for="operationNum">Операция в анамнезе</label>
+                            <div>
+                            <label>Операция в анамнезе *</label>
                             <input type="number" id="operationNum" name="operationNum" min="0">
-                            
-                            <label for="nutStatus">Нутритивный статус</label>
+                            </div>
+
+                            <div>
+                            <label>Нутритивный статус *</label>
                             <select name="nutStatus" id="nutStatus" required>
                                     <option value="Гипотрофия">Гипотрофия</option>
                                     <option value="Норма" selected>Норма</option>
                                     <option value="Ожирение">Ожирение</option>
                                     <option value="Выраженное ожирение">Выраженное ожирение</option>
                             </select>
-                            
-                            <label for="height">Рост</label>
+                            </div>
+
+                            <div>
+                            <label>Рост *</label>
                             <input type="number" id="height" name="height" min="100" max="250" required>
-                            
+                            </div>
+
                             <div style="display:flex;">
                                 <div style="display:grid; flex: 40%; margin-right: 10px;" >
-                                <fieldset style='width: 90%' >
-                                    <legend><label for="mutation">Мутации</label></legend>
+                    
+                                <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                                <fieldset style='width: 94%' >
+                                    <legend><label for="mutation">Мутации *</label></legend>
                                     <div class="align">
                                         <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
                                         <p><input type="radio" id="mutation" name="mutation" value="Нет" checked>Нет</p>
@@ -128,8 +155,8 @@
                                 </fieldset>
                                 </div>
                                 <div style="display:grid; flex: 40%; margin-left: 10px; margin-right: 10px;">
-                                <fieldset style='width: 90%' >
-                                    <legend><label for="therapyOk">Привержен терапии</label></legend>
+                                <fieldset style='width: 94%' >
+                                    <legend><label for="therapyOk">Привержен терапии *</label></legend>
                                     <div class="align">
                                         <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>
                                         <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
@@ -137,8 +164,8 @@
                                 </fieldset>
                                 </div>
                                 <div style="display:grid; flex: 40%; margin-left: 10px; ">
-                                <fieldset style='width: 90%' >
-                                    <legend> <label for="smoking">Курение</label></legend>
+                                <fieldset style='width: 93%' >
+                                    <legend> <label for="smoking">Курение *</label></legend>
                                     <div class="align">
                                         <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
                                         <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
@@ -146,8 +173,7 @@
                                 </fieldset>
                                 </div>
                             </div> 
-                        
-                            <input type="submit" name="submit" value="Внести данные">
+                             <input type="submit" name="submit" value="Внести данные">
                         </div>
                 </fieldset>
             </div>

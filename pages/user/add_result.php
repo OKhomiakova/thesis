@@ -63,7 +63,7 @@
                     <label for="weight">Вес</label>
                     <input type="number" id="weight" name="weight" min="30" max="150" step="any"  required>
                     <label for="IMT">ИМТ</label>
-                    <input type="number" id="IMT" name="IMT" step="any" required>
+                    <input type="number" id="IMT" name="IMT" step="any" required readonly>
                     <label for="OHS">OXC</label>
                     <input type="number" id="OHS" name="OHS" min="2.0" max="18.0" step="any" required>
                     <label for="LPNP">ЛПНП</label>

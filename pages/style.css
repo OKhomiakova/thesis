@@ -111,6 +111,7 @@ footer {
     background-color: #f3f3f3;
     color: black;
     text-decoration: none;
+    padding: 8px;
 }
 
 footer a {
@@ -151,6 +152,8 @@ label {
 }
 
 input:not([type=radio]):not([type=submit]), select{
+    height: 40px;
+    width: 100%;
     border: 1px solid #CCCCCC;
     padding: 12px 20px;
     margin: 8px 0px;
@@ -217,6 +220,7 @@ tr:nth-child(even) {
 
 fieldset {
     width: 80%;
+    margin: 8px 8px;
 }
 
 fieldset div fieldset {
@@ -249,44 +253,21 @@ fieldset div fieldset {
     width: 50%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+p {
+    margin: 0 5px 0 5px;
+}
 
 input[type=radio] {
   position: relative;
   -webkit-appearance: none;
   font-size: inherit;
   width: 1em;
-  margin: 0;
+  margin: 0 3px 0 0;
   color: inherit;
   outline: none;
   font-family: 'Font Awesome 5 Pro';
   transition: 300ms ease-out;
+  cursor: pointer;
 }
 input[type=radio]::after {
   content: '\f111';
@@ -300,7 +281,7 @@ input[type=radio]:checked::after {
 input[type=radio]:active {
   transform: scale(0.6);
 }
-input[type=radio] + span {
+input[type=radio] + p {
   margin-left: 0.35em;
 }
 input[type=radio]:checked::after {
