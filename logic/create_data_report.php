@@ -102,7 +102,7 @@ $getResultData .= "ORDER BY datAnalysis ASC LIMIT 1";
 $result = mysqli_query($link, $getResultData);
 if(mysqli_num_rows($result) != 1) {
     $message = "<p style='color:red'> Произошла ошибка. Свяжитесь с администратором... </p>";
-    exit;               
+    return;               
 }
 $row = mysqli_fetch_array($result);
 $sheet->setCellValue('C2', 'Дата исследования');

@@ -44,6 +44,13 @@
             ?>
         </fieldset>
     </div>
+        <div style='display: grid; justify-items:center;'>
+        <?php 
+            if(isset($message)) {
+                echo $message;
+            }
+        ?>
+    </div>
     <form method="POST" id="report_form" name="create_report" style="display:none">
         <div style='display: grid; justify-items:center;'>
             <input type="submit" name="submit" value="Сформировать отчет">
