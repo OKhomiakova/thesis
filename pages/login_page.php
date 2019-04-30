@@ -19,9 +19,10 @@
                 <input type="password" name="password" placeholder="Пароль"/>
             </div>
             <div style="color:red"><?php if(isset($error)) echo $error; ?></div>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember" checked> Запомнить меня на 30 дней
-                </label>
+                <div style="">
+                    <input type="checkbox" checked="checked" name="remember" checked style="transform:scale(0.4);opacity:0.9; cursor:pointer;">
+                    <label for="remember">Запомнить меня на 30 дней</label>
+                </div>
             <input type="submit" name="submit" value="Вход" style="margin: 10px;">
         </form>
 </body>
