@@ -120,7 +120,7 @@ body {font-family: Arial;}
 
 <div id="passport" class="tabcontent">
 <main class="fancy">
-        <form name="add_patient" method="POST">
+        <form name="add_patient" id="passport_form" method="POST">
             <div style='display: flex; justify-content:center;'>
                 <fieldset style='width: 80%;' >
                     <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
@@ -253,20 +253,172 @@ body {font-family: Arial;}
                                 </fieldset>
                                 </div>
                             </div> 
-                             <input type="submit" name="submit" value="Редактировать">
+                            <input type="submit" id="save" name="save" value="Сохранить">
                         </div>
                 </fieldset>
             </div>
         </form>
+
+
+
+
+
+
+
+        <form name="add_patient" id="passport_form_nonedit" method="POST">
+            <div style='display: flex; justify-content:center;'>
+                <fieldset style='width: 80%;' >
+                    <legend><h2 style="margin: 0;">Паспорт пациента</h2></legend>
+                        <div class="passport">
+                        <div style="display:flex;">
+                                <div style="flex: 50%; margin-right: 10px;" >
+                                <label>Дата ввода данных</label>
+                                <input type="date" id="dateInput" name="dateInput" readonly>    
+                                </div>
+                                <div style="display:grid; flex: 50%; margin-left: 10px;">
+                                <div>
+                                <label>№ Истории Болезни</label>
+                                <input type="number" id="patientCard" name="card" min="0"  readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div>
+                            <label>ФИО Пациента</label>
+                            <input type="text" id="patientName" name="patientName" maxlength="100" placeholder="Фамилия Имя Отчество" readonly>
+                            </div>
+
+                            <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                                <div style="flex: 40%; margin-right: 10px;" >
+                                    <label>Дата рождения</label>
+                                    <input type="date" id="patientDateOfBirth" name="bithDay" readonly>
+                                    </div>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px;">
+                                <div>
+                                    <label>Возраст</label>
+                                    <input type="number" id="patientAge" name="age" min="0" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                            <label>Пол</label>
+                            <select name="gender" id="patientGender" readonly>
+                                <option value="" selected disabled>Please select an option...</option>
+                                <option value="Мужской" selected>Мужской</option>
+                                <option value="Женский">Женский</option>
+                            </select>
+                            </div>
+
+                            <div>
+                            <label>Группа СГХС</label>
+                            <select name="SGHSGroup" id="SGHSGroup" readonly>
+                                <option value="Определенная" selected>Определенная</option>
+                                <option value="Возможная">Возможная</option>
+                                <option value="Вероятная">Вероятная</option>
+                            </select>
+                            </div>
+
+                            <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                                <fieldset style='width: 93%' >
+                                <legend><label for="IBS">ИБС</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="IBS" name="ibs" value="Есть">Есть</p>
+                                        <p><input type="radio" id="IBS" name="ibs" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px;">
+                                <fieldset style='width: 93%' >
+                                <legend><label for="AG">АГ</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="AG" name="ag" value="Есть">Есть</p>
+                                        <p><input type="radio" id="AG" name="ag" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                            </div>
+                            <div>
+                            <label>ОИМ в анамнезе</label>
+                            <input type="number" id="OIM" name="oim" min="0" readonly>
+                            </div>
+
+                            <div>
+                            <label>Операция в анамнезе</label>
+                            <input type="number" id="operationNum" name="operationNum" min="0">
+                            </div>
+
+                            <div>
+                            <label>Нутритивный статус</label>
+                            <select name="nutStatus" id="nutStatus" readonly>
+                                    <option value="Гипотрофия">Гипотрофия</option>
+                                    <option value="Норма" selected>Норма</option>
+                                    <option value="Ожирение">Ожирение</option>
+                                    <option value="Выраженное ожирение">Выраженное ожирение</option>
+                            </select>
+                            </div>
+
+                            <div>
+                            <label>Рост</label>
+                            <input type="number" id="height" name="height" min="100" max="250" readonly>
+                            </div>
+
+                            <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                    
+                                <div style="display:flex;">
+                                <div style="display:grid; flex: 40%; margin-right: 10px;" >
+                                <fieldset style='width: 94%' >
+                                    <legend><label for="mutation">Мутации</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="mutation" name="mutation" value="Есть">Есть</p>
+                                        <p><input type="radio" id="mutation" name="mutation" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px; margin-right: 10px;">
+                                <fieldset style='width: 94%' >
+                                    <legend><label for="therapyOk">Привержен терапии</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Да" checked>Да</p>
+                                        <p><input type="radio" id="therapyOk" name="therapyOk" value="Нет">Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                                <div style="display:grid; flex: 40%; margin-left: 10px; ">
+                                <fieldset style='width: 93%' >
+                                    <legend> <label for="smoking">Курение</label></legend>
+                                    <div class="align">
+                                        <p><input type="radio" id="smoking" name="smoking" value="Да">Да</p>
+                                        <p><input type="radio" id="smoking" name="smoking" value="Нет" checked>Нет</p>
+                                    </div>
+                                </fieldset>
+                                </div>
+                            </div> 
+                        </div>
+                </fieldset>
+            </div>
+        </form>
+  
+
+
+
+
+
+
+        <form name="add_patient" id="edit_form" method="POST">
+            <div style='display: flex; justify-content:center;'>
+                <fieldset style='width: 80%;' >
+                    <div class="passport">
+                        <input type="submit" id="edit" name="edit" value="Редактировать">
+                    </div>
+                </fieldset>
+            </div>
+        </form>
     </main>
-<!-- <?php
-    printf("<form action='./edit.php' method='POST' name='edit_data'>
-        <div style='display: flex; justify-content:center;'>
-<div class='passport'>
-        <label for='dateInput'>Дата ввода данных</label></br>
-        <input type='date' id='dateInput' name='dateInput' value='%s'></br></div></div></form>",$row['txtPatientFullName'],$row['datInput']);
-        
-?> -->
 </div>
 <div id="result" class="tabcontent">
 <div class="sortDate" style="display:flex; float: right;">
@@ -308,7 +460,18 @@ body {font-family: Arial;}
         while($row2 = mysqli_fetch_array($result3));
     ?>
 </div>
-
+    <?php 
+        if(isset($_POST["edit"])) {
+            $str = 'document.getElementById("edit_form").style.display="none";';            
+            echo "<script> ".$str." </script>";  
+            $str = 'document.getElementById("passport_form_nonedit").style.display="none";';            
+            echo "<script> ".$str." </script>";                        
+        }
+        else {
+            $str = 'document.getElementById("passport_form").style.display="none";';            
+            echo "<script> ".$str." </script>";            
+        }
+    ?>
 <script>
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
